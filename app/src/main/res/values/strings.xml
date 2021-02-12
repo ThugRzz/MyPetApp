@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyPetApp</string>
+    <string name="edit_email_hint">E-mail</string>
+    <string name="enter">Вход</string>
+    <string name="edit_phone_hint">Номер телефона</string>
+    <string name="edit_password_hint">Пароль</string>
+    <string name="register_underline"><u>Зарегистрироваться</u></string>
+    <string name="come_in">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="forgot_password"><u>Забыли пароль?</u></string>
+    <string name="registrate">Зарегистрироваться</string>
+    <string name="have_account">Есть аккаунт?</string>
+    <string name="come_in_underline"><u>Войти</u></string>
+</resources>

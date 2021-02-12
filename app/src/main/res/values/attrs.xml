@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedButton">
+        <attr name="roundedButtonBgColor" format="color"/>
+        <attr name="roundedButtonText" format="string" />
+        <attr name="roundedButtonForeground" format="reference"/>
+        <attr name="roundedButtonTextAppearance" format="reference" />
+        <attr name="roundedButtonRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IndicatorsView">
+        <attr name="indicatorsColorCurrent" format="color" />
+        <attr name="indicatorsColorDefault" format="color" />
+        <attr name="indicatorsMargin" format="dimension" />
+        <attr name="indicatorsRadius" format="dimension" />
+        <attr name="indicatorsTotalCount" format="integer" />
+        <attr name="indicatorsCurrentPosition" format="integer" />
+    </declare-styleable>
+</resources>

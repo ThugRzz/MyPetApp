@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:layout_gravity="bottom"
+        android:translationZ="1dp"
+        android:layout_marginBottom="250dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@mipmap/icon_start" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_64dp"
+        android:drawablePadding="@dimen/dimen_8dp"
+        android:text="@string/app_name"
+        android:textSize="@dimen/text_24"
+        app:drawableLeftCompat="@drawable/ic_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_rounded_top_corners"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dimen_27dp">
+
+        <com.thugrzz.mypetapp.view.RoundedButton
+            android:id="@+id/authButton"
+            style="@style/RoundedButton.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_64dp"
+            app:roundedButtonText="Log In" />
+
+        <com.thugrzz.mypetapp.view.RoundedButton
+            android:id="@+id/registerButton"
+            style="@style/RoundedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_18dp"
+            app:roundedButtonText="Sign Up" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_24dp"
+                app:elevation="0dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_vk" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                android:layout_marginEnd="@dimen/dimen_24dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_facebook" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_twitter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
