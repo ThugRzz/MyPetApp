@@ -9,7 +9,7 @@
         android:layout_marginStart="@dimen/padding_16"
         android:visibility="invisible" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/titleView"
         android:layout_width="0dp"
         android:layout_height="@dimen/height_72"

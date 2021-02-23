@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.annotation.StyleRes
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.cardview.widget.CardView
+import com.google.android.material.card.MaterialCardView
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.ext.resolveAttributeDrawable
 
@@ -13,7 +13,7 @@ class RoundedButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : CardView(context, attrs, defStyleAttr) {
+) : MaterialCardView(context, attrs, defStyleAttr) {
 
     private val textView = AppCompatTextView(context)
 

@@ -26,7 +26,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="Коржик">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/expandedImageView"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
