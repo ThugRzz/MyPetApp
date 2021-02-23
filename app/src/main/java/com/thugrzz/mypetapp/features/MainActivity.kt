@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navigateToOnboardingFragment()
+        navigateToStartFragment()
     }
 
-    private fun navigateToStartScreen() = supportFragmentManager.apply {
+    private fun navigateToStartFragment() = supportFragmentManager.apply {
         clearBackStack()
         commit {
             replace(R.id.mainActivityContainer, StartFragment.newInstance(), StartFragment.TAG)

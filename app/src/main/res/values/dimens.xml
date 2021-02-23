@@ -2,6 +2,7 @@
 <resources>
 
     <!-- text size -->
+    <dimen name="text_15">15sp</dimen>
     <dimen name="text_16">16sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
@@ -9,8 +10,15 @@
 
     <!-- radius -->
     <dimen name="radius_10">10dp</dimen>
+    <dimen name="radius_22">22dp</dimen>
     <dimen name="radius_27">27dp</dimen>
     <dimen name="radius_32">32dp</dimen>
+
+    <!-- insets -->
+    <dimen name="inset_0">0dp</dimen>
+
+    <!-- width -->
+    <dimen name="width_1">1dp</dimen>
 
     <!-- elevation -->
     <dimen name="elevation_0">0dp</dimen>

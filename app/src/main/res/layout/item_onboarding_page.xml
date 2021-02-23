@@ -54,14 +54,14 @@
                 android:text="Краткая информация по уходу за животным. Что можем предложить для облегченного ухода за домашним питомцем"
                 android:textSize="@dimen/text_16" />
 
-            <com.thugrzz.mypetapp.view.RoundedButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/actionButton"
-                style="@style/RoundedButton.Dark"
+                style="@style/RoundedButton"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_50"
                 android:layout_marginHorizontal="@dimen/padding_22"
                 android:layout_marginTop="@dimen/height_50"
-                app:roundedButtonText="Далее" />
+                android:text="@string/action_next" />
 
             <com.thugrzz.mypetapp.view.IndicatorsView
                 android:id="@+id/indicatorsView"

@@ -1,7 +1,9 @@
 package com.thugrzz.mypetapp.features.auth.authorization
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
@@ -25,7 +27,6 @@ class AuthDialogFragment : DimensionalBottomSheetFragment(R.layout.dlg_auth, SCR
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val resetProceedButton = { binding.btn.isEnabled = false }
         viewLifecycleOwner.lifecycleScope.launch {
         }
 

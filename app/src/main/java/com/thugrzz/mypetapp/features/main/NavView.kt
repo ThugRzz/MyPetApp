@@ -37,6 +37,7 @@ class NavView @JvmOverloads constructor(
     private val tabs = NavTab.values()
 
     var tabClickListener: TabClickListener? = null
+
     var selectedTab: NavTab? = null
         set(value) {
             field = value

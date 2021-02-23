@@ -59,6 +59,10 @@ class MainFragment : Fragment(R.layout.fmt_main), NavView.TabClickListener {
         NavTab.QR_CODE -> ProfileFragment.newInstance()
     }
 
+    fun pushFragment(fragment: Fragment) {
+        multiStacks.push(fragment)
+    }
+
     fun onBackPressed() {
         val result = multiStacks.onBackPressed()
         if (result.type == BackResultType.CANCELLED) {
