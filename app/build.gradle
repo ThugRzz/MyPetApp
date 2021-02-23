@@ -93,4 +93,10 @@ dependencies {
 
     //ViewPager
     implementation "androidx.viewpager2:viewpager2:1.1.0-alpha01"
+
+    //Multistacks
+    implementation 'com.github.DimaKron:Android-MultiStacks:1.1'
+
+    //BlurKit
+    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
 }

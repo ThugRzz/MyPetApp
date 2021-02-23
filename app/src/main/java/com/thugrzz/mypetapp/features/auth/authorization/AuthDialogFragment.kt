@@ -1,4 +1,4 @@
-package com.thugrzz.mypetapp.features.auth
+package com.thugrzz.mypetapp.features.auth.authorization
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.arch.DimensionalBottomSheetFragment
 import com.thugrzz.mypetapp.databinding.DlgAuthBinding
-import com.thugrzz.mypetapp.ext.asFlow
 import com.thugrzz.mypetapp.ext.showIfNotShowing
 import kotlinx.coroutines.launch
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navTabLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/navTabIconView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_profile" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/navTabTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Профиль" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/navTabBadgeView"
+        android:layout_width="@dimen/height_9"
+        android:layout_height="@dimen/height_9"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="@dimen/padding_5"
+        android:layout_marginEnd="@dimen/padding_13"
+        android:background="@drawable/bg_nav_badge"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -11,4 +11,11 @@
     <string name="registrate">Зарегистрироваться</string>
     <string name="have_account">Есть аккаунт?</string>
     <string name="come_in_underline"><u>Войти</u></string>
+
+    <!-- navigation titles -->
+    <string name="profile">Профиль</string>
+    <string name="reference">Справочник</string>
+    <string name="schedule">Расписание</string>
+    <string name="qr_code">QR-код</string>
+    <string name="skip">Пропустить</string>
 </resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.thugrzz.mypetapp.view.ShadowIconView
+        android:id="@+id/titleStartIconView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/padding_16"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_72"
+        android:layout_marginStart="@dimen/padding_4"
+        android:layout_marginEnd="@dimen/padding_4"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_20"
+        android:textStyle="bold" />
+
+    <com.thugrzz.mypetapp.view.ShadowIconView
+        android:id="@+id/titleEndIconView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:visibility="invisible" />
+
+</merge>

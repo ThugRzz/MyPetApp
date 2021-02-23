@@ -1,22 +1,22 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/orange_CD5334</item>
+        <item name="colorOnSecondary">@color/white</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bg_rounded_top_corners</item>
     </style>
 
@@ -38,18 +38,19 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <style name="DefaultIndicators">
         <item name="indicatorsColorCurrent">@color/colorAccent</item>
         <item name="indicatorsColorDefault">@color/blue_AFCBFF</item>
-        <item name="indicatorsMargin">@dimen/dimen_22dp</item>
-        <item name="indicatorsRadius">@dimen/dimen_3dp</item>
+        <item name="indicatorsMargin">22dp</item>
+        <item name="indicatorsRadius">3dp</item>
     </style>
 
     <style name="RoundedButton" parent="@style/CardView">
         <item name="roundedButtonBgColor">@color/white</item>
         <item name="roundedButtonForeground">@drawable/bg_rounded_button_light</item>
         <item name="roundedButtonTextAppearance">@style/TextRoundedButton</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/text_18</item>
     </style>
 
     <style name="RoundedButton.Dark">
@@ -65,6 +66,21 @@
 
     <style name="TextRoundedButton.Dark">
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="expandedToolbarLayoutTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_24</item>
+    </style>
+
+    <style name="collapsedToolbarLayoutTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_24</item>
     </style>
 
 </resources>

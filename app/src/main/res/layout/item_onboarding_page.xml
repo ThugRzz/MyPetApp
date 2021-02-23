@@ -8,13 +8,13 @@
         android:id="@+id/skipView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:translationZ="1dp"
-        android:textSize="@dimen/text_16"
-        android:layout_marginEnd="@dimen/dimen_22dp"
-        android:layout_marginTop="@dimen/dimen_22dp"
         android:layout_gravity="end"
-        android:text="Пропустить"/>
+        android:layout_marginTop="@dimen/padding_22"
+        android:layout_marginEnd="@dimen/padding_22"
+        android:text="@string/skip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16"
+        android:translationZ="1dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_280dp"
+            android:layout_height="280dp"
             android:background="@drawable/bg_rounded_top_corners"
             android:orientation="vertical">
 
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/padding_22"
                 android:fontFamily="sans-serif-medium"
                 android:text="Уход"
                 android:textSize="@dimen/text_24" />
@@ -49,8 +49,8 @@
                 android:id="@+id/descriptionView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dimen_22dp"
-                android:layout_marginTop="@dimen/dimen_16dp"
+                android:layout_marginHorizontal="@dimen/padding_22"
+                android:layout_marginTop="@dimen/padding_16"
                 android:text="Краткая информация по уходу за животным. Что можем предложить для облегченного ухода за домашним питомцем"
                 android:textSize="@dimen/text_16" />
 
@@ -58,9 +58,9 @@
                 android:id="@+id/actionButton"
                 style="@style/RoundedButton.Dark"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50dp"
-                android:layout_marginHorizontal="@dimen/dimen_22dp"
-                android:layout_marginTop="@dimen/dimen_50dp"
+                android:layout_height="@dimen/height_50"
+                android:layout_marginHorizontal="@dimen/padding_22"
+                android:layout_marginTop="@dimen/height_50"
                 app:roundedButtonText="Далее" />
 
             <com.thugrzz.mypetapp.view.IndicatorsView
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dimen_24dp"
+                android:layout_marginTop="@dimen/padding_24"
                 app:indicatorsColorCurrent="@color/colorAccent"
                 app:indicatorsCurrentPosition="0"
                 app:indicatorsTotalCount="4" />

@@ -5,21 +5,35 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
+    <com.thugrzz.mypetapp.view.Loader
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="10dp"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click me"
+        android:textColor="@color/colorAccent" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="360dp"
         android:layout_gravity="bottom"
-        android:translationZ="1dp"
         android:layout_marginBottom="250dp"
         android:scaleType="fitCenter"
+        android:translationZ="1dp"
         app:srcCompat="@mipmap/icon_start" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_64dp"
-        android:drawablePadding="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/padding_64"
+        android:drawablePadding="@dimen/padding_8"
         android:text="@string/app_name"
         android:textSize="@dimen/text_24"
         app:drawableLeftCompat="@drawable/ic_icon" />
@@ -30,14 +44,14 @@
         android:layout_gravity="bottom"
         android:background="@drawable/bg_rounded_top_corners"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/dimen_27dp">
+        android:paddingHorizontal="27dp">
 
         <com.thugrzz.mypetapp.view.RoundedButton
             android:id="@+id/authButton"
             style="@style/RoundedButton.Dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_64dp"
+            android:layout_marginTop="@dimen/padding_64"
             app:roundedButtonText="Log In" />
 
         <com.thugrzz.mypetapp.view.RoundedButton
@@ -46,20 +60,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimen_18dp"
+            android:layout_marginTop="@dimen/padding_18"
             app:roundedButtonText="Sign Up" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginTop="@dimen/padding_24"
             android:orientation="horizontal">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dimen_24dp"
+                android:layout_marginEnd="@dimen/padding_24"
                 app:elevation="0dp"
                 app:fabSize="mini"
                 app:srcCompat="@drawable/ic_vk" />
@@ -67,8 +81,8 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_24"
                 app:elevation="0dp"
-                android:layout_marginEnd="@dimen/dimen_24dp"
                 app:fabSize="mini"
                 app:srcCompat="@drawable/ic_facebook" />
 

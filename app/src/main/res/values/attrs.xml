@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <item name="icon" type="drawable" />
+
     <declare-styleable name="RoundedButton">
-        <attr name="roundedButtonBgColor" format="color"/>
+        <attr name="roundedButtonBgColor" format="color" />
         <attr name="roundedButtonText" format="string" />
-        <attr name="roundedButtonForeground" format="reference"/>
+        <attr name="roundedButtonForeground" format="reference" />
         <attr name="roundedButtonTextAppearance" format="reference" />
         <attr name="roundedButtonRadius" format="dimension" />
     </declare-styleable>
@@ -15,5 +18,22 @@
         <attr name="indicatorsRadius" format="dimension" />
         <attr name="indicatorsTotalCount" format="integer" />
         <attr name="indicatorsCurrentPosition" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ShadowIconView">
+        <attr name="shadowIcon" format="reference" />
+        <attr name="shadowIconTint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleBarView">
+        <attr name="titleText" format="string" />
+        <attr name="titleStartIcon" format="reference" />
+        <attr name="titleEndIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProfileParametersView">
+        <attr name="leftTitle" format="string" />
+        <attr name="rightTitle" format="string" />
+        <attr name="icon" format="reference" />
     </declare-styleable>
 </resources>

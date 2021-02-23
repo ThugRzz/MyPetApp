@@ -1,4 +1,4 @@
-package com.thugrzz.mypetapp.features.auth
+package com.thugrzz.mypetapp.features.auth.register
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,6 @@ import androidx.fragment.app.commit
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.arch.BaseBackStackBottomSheet
 import com.thugrzz.mypetapp.ext.showIfNotShowing
-import com.thugrzz.mypetapp.features.auth.register.RegisterPersonalInfoFragment
 
 class RegisterDialogFragment :
     BaseBackStackBottomSheet(R.layout.dlg_register, SCREEN_SIZE),

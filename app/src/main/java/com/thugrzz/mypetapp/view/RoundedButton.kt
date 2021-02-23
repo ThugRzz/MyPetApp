@@ -13,7 +13,7 @@ class RoundedButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) :CardView(context, attrs, defStyleAttr){
+) : CardView(context, attrs, defStyleAttr) {
 
     private val textView = AppCompatTextView(context)
 
@@ -30,10 +30,10 @@ class RoundedButton @JvmOverloads constructor(
         foreground = context.resolveAttributeDrawable(R.attr.selectableItemBackground)
 
         textView.apply {
-            minHeight = resources.getDimensionPixelSize(R.dimen.dimen_48dp)
+            minHeight = resources.getDimensionPixelSize(R.dimen.height_48)
             gravity = Gravity.CENTER
             maxLines = 1
-            val padding = resources.getDimensionPixelSize(R.dimen.dimen_9dp)
+            val padding = resources.getDimensionPixelSize(R.dimen.padding_8)
             setPaddingRelative(padding, 0, padding, 0)
         }
 
@@ -42,13 +42,14 @@ class RoundedButton @JvmOverloads constructor(
         )
         radius = typedArray.getDimension(
             R.styleable.RoundedButton_roundedButtonRadius,
-            context.resources.getDimension(R.dimen.dimen_27dp)
+            context.resources.getDimension(R.dimen.radius_27)
         )
 
         foreground = typedArray.getDrawable(R.styleable.RoundedButton_roundedButtonForeground)
 
-        backgroundTintList = typedArray.getColorStateList(R.styleable.RoundedButton_roundedButtonBgColor)
-        
+        backgroundTintList =
+            typedArray.getColorStateList(R.styleable.RoundedButton_roundedButtonBgColor)
+
         text = typedArray.getText(R.styleable.RoundedButton_roundedButtonText)
         setTextAppearance(
             typedArray.getResourceId(
