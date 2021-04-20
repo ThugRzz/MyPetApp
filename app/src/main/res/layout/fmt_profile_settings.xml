@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.thugrzz.mypetapp.view.TitleBarView
+        android:id="@+id/titleBarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleStartIcon="@drawable/ic_baseline_arrow_back_24"
+        app:titleText="Настройки" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_24"
+                android:layout_marginTop="@dimen/padding_32"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/personal_info"
+                android:textSize="@dimen/text_16" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:id="@+id/nameView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemActionIcon="@drawable/ic_edit"
+                app:profileItemIcon="@drawable/ic_user"
+                app:profileItemIconBgColor="@color/orange_CD5334"
+                app:profileItemMiddleText="Ким Андрей"
+                app:profileItemTopText="@string/name_param" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:id="@+id/emailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemActionIcon="@drawable/ic_edit"
+                app:profileItemIcon="@drawable/ic_mail"
+                app:profileItemIconBgColor="@color/blue_AFCBFF"
+                app:profileItemMiddleText="kummu-97@mail.ru"
+                app:profileItemTopText="@string/email_param" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:id="@+id/phoneView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemActionIcon="@drawable/ic_edit"
+                app:profileItemIcon="@drawable/ic_phone"
+                app:profileItemIconBgColor="@color/blue_AFCBFF"
+                app:profileItemMiddleText="+79050135580"
+                app:profileItemTopText="@string/phone_param" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:id="@+id/addressView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemActionIcon="@drawable/ic_edit"
+                app:profileItemBottomText="Нижний Новгород"
+                app:profileItemIcon="@drawable/ic_baseline_location_on_24"
+                app:profileItemIconBgColor="@color/blue_AFCBFF"
+                app:profileItemMiddleText="Ул. Ленина, 45, 23"
+                app:profileItemTopText="@string/address_param" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:id="@+id/passwordView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemActionIcon="@drawable/ic_edit"
+                app:profileItemIcon="@drawable/ic_key"
+                app:profileItemIconBgColor="@color/orange_FE9900"
+                app:profileItemMiddleText="••••••••••••"
+                app:profileItemTopText="@string/password_param" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_24"
+                android:layout_marginTop="@dimen/padding_32"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/settings"
+                android:textSize="@dimen/text_16" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemIcon="@drawable/ic_bell"
+                app:profileItemIconBgColor="@color/colorAccent"
+                app:profileItemMiddleText="Уведомления" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemIcon="@drawable/ic_share"
+                app:profileItemIconBgColor="@color/colorAccent"
+                app:profileItemMiddleText="Поделиться" />
+
+            <com.thugrzz.mypetapp.view.ProfileItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                app:profileItemIcon="@drawable/ic_mail_to"
+                app:profileItemIconBgColor="@color/colorAccent"
+                app:profileItemMiddleText="Связаться с нами" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

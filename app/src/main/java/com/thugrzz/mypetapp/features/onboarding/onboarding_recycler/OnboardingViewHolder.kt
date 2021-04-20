@@ -1,6 +1,5 @@
 package com.thugrzz.mypetapp.features.onboarding.onboarding_recycler
 
-import android.content.res.ColorStateList
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,8 +7,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.data.model.local.OnboardingItem
 import com.thugrzz.mypetapp.databinding.ItemOnboardingPageBinding
-import com.thugrzz.mypetapp.util.getColorCompat
-import com.thugrzz.mypetapp.util.inflateHolder
+import com.thugrzz.mypetapp.ext.getColorCompat
+import com.thugrzz.mypetapp.ext.inflateHolder
 
 class OnboardingViewHolder(
     itemView: View,

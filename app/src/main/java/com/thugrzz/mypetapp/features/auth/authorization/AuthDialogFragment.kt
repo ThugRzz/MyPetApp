@@ -27,8 +27,6 @@ class AuthDialogFragment : DimensionalBottomSheetFragment(R.layout.dlg_auth, SCR
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewLifecycleOwner.lifecycleScope.launch {
-        }
 
         with(binding) {
             registerButton.setOnClickListener {

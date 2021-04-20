@@ -47,23 +47,19 @@
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways">
 
-                <com.thugrzz.mypetapp.view.ShadowIconView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:backgroundTint="@color/white"
-                    app:shadowIcon="@drawable/ic_baseline_arrow_back_24"
-                    app:shadowIconTint="@color/colorAccent" />
+                <View
+                    android:layout_width="@dimen/height_40"
+                    android:layout_height="@dimen/height_40"/>
 
                 <com.thugrzz.mypetapp.view.ShadowIconView
-                    android:id="@+id/editIconView"
+                    android:id="@+id/menuIconView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/padding_16"
                     android:backgroundTint="@color/white"
                     android:visibility="invisible"
-                    app:shadowIcon="@drawable/ic_baseline_edit_24"
+                    app:shadowIcon="@drawable/ic_menu"
                     app:shadowIconTint="@color/colorAccent" />
 
             </com.google.android.material.appbar.MaterialToolbar>

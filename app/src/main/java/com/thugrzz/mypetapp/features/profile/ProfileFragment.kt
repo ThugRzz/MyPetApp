@@ -1,7 +1,6 @@
 package com.thugrzz.mypetapp.features.profile
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -9,6 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.databinding.FmtProfileBinding
+import com.thugrzz.mypetapp.features.profile.dialog.ProfileMenuDialog
 import kotlin.math.roundToInt
 
 
@@ -16,14 +16,15 @@ class ProfileFragment : Fragment(R.layout.fmt_profile) {
 
     private val binding by viewBinding(FmtProfileBinding::bind)
 
-    private lateinit var menu: Menu
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAppBar()
         with(binding) {
             toolbarView.setNavigationOnClickListener {
                 parentFragmentManager.popBackStack()
+            }
+            menuIconView.setOnClickListener {
+                ProfileMenuDialog.show(parentFragmentManager)
             }
         }
     }
@@ -46,7 +47,7 @@ class ProfileFragment : Fragment(R.layout.fmt_profile) {
     private fun setupToolbarIcons(ratio: Float) {
         with(binding) {
             val isRatioZero = ratio == 0f
-            editIconView.visibility = if (isRatioZero) View.VISIBLE else View.INVISIBLE
+            menuIconView.visibility = if (isRatioZero) View.VISIBLE else View.INVISIBLE
             toolbarView.navigationIcon?.setTint(
                 ContextCompat.getColor(
                     requireContext(),

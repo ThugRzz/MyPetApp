@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.databinding.FmtMainBinding
+import com.thugrzz.mypetapp.features.reference.ReferenceFragment
 import com.thugrzz.mypetapp.features.profile.ProfileFragment
 import ru.dimakron.multistacks_lib.BackResultType
 import ru.dimakron.multistacks_lib.MultiStacks
@@ -54,7 +55,7 @@ class MainFragment : Fragment(R.layout.fmt_main), NavView.TabClickListener {
     //todo change root fragments
     private fun getRootFragment(tab: NavTab): Fragment = when (tab) {
         NavTab.SCHEDULE -> ProfileFragment.newInstance()
-        NavTab.REFERENCE -> ProfileFragment.newInstance()
+        NavTab.REFERENCE -> ReferenceFragment.newInstance()
         NavTab.PROFILE -> ProfileFragment.newInstance()
         NavTab.QR_CODE -> ProfileFragment.newInstance()
     }

@@ -11,7 +11,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/padding_32"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/enter"
+        android:text="@string/action_enter"
         android:textSize="@dimen/text_20" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_50"
         android:layout_marginHorizontal="@dimen/padding_24"
-        android:text="@string/come_in" />
+        android:text="@string/action_login" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/registerButton"
@@ -87,7 +87,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/padding_16"
         android:layout_marginBottom="@dimen/padding_64"
-        android:text="@string/register_underline"
+        android:text="@string/action_register_underline"
         android:textColor="@color/orange_E77728"
         android:textSize="@dimen/text_16" />
 

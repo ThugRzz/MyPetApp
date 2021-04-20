@@ -4,8 +4,17 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.thugrzz.mypetapp.features.main.MainFragment
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
+
+fun Fragment.getColorCompat(color: Int) = context?.getColorCompat(color)
+
+fun Fragment.hideKeyboard() {
+    activity?.hideKeyboard()
+}
+
+fun Fragment.getMainFragment() = requireParentFragment() as MainFragment
 
 fun DialogFragment.showIfNotShowing(fragmentManager: FragmentManager, tag: String) {
     if (fragmentManager.findFragmentByTag(tag) == null) {

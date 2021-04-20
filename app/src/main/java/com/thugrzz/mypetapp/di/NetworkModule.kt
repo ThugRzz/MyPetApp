@@ -12,6 +12,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
+private const val BASE_URL = "http://10.0.2.2:8000/"
+
 val networkModule = module {
 
     single<Gson> {
@@ -30,7 +32,7 @@ val networkModule = module {
         val callAdapterFactory = RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io())
         val converterFactory = GsonConverterFactory.create(get<Gson>())
         Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BASE_URL)
             .client(get<OkHttpClient>())
             .addCallAdapterFactory(callAdapterFactory)
             .addConverterFactory(converterFactory)

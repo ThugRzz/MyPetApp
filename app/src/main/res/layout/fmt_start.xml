@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_64"
-            android:text="@string/come_in" />
+            android:text="@string/action_login" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/padding_18"
-            android:text="@string/registrate" />
+            android:text="@string/action_registrate" />
 
         <LinearLayout
             android:layout_width="wrap_content"

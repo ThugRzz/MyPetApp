@@ -36,4 +36,20 @@
         <attr name="rightTitle" format="string" />
         <attr name="icon" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="ReferenceItemView">
+        <attr name="itemDrawable" format="reference" />
+        <attr name="itemTitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ProfileItemView">
+        <attr name="profileItemActionIcon" format="reference" />
+        <attr name="profileItemIcon" format="reference" />
+        <attr name="profileItemIconBgColor" format="color" />
+        <attr name="profileItemTopText" format="string" />
+        <attr name="profileItemMiddleText" format="string" />
+        <attr name="profileItemBottomText" format="string" />
+    </declare-styleable>
+
+
 </resources>
