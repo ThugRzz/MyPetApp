@@ -42,7 +42,7 @@
                 app:profileItemIcon="@drawable/ic_user"
                 app:profileItemIconBgColor="@color/orange_CD5334"
                 app:profileItemMiddleText="Ким Андрей"
-                app:profileItemTopText="@string/name_param" />
+                app:profileItemTopText="@string/param_name" />
 
             <com.thugrzz.mypetapp.view.ProfileItemView
                 android:id="@+id/emailView"
@@ -54,7 +54,7 @@
                 app:profileItemIcon="@drawable/ic_mail"
                 app:profileItemIconBgColor="@color/blue_AFCBFF"
                 app:profileItemMiddleText="kummu-97@mail.ru"
-                app:profileItemTopText="@string/email_param" />
+                app:profileItemTopText="@string/param_email" />
 
             <com.thugrzz.mypetapp.view.ProfileItemView
                 android:id="@+id/phoneView"
@@ -66,7 +66,7 @@
                 app:profileItemIcon="@drawable/ic_phone"
                 app:profileItemIconBgColor="@color/blue_AFCBFF"
                 app:profileItemMiddleText="+79050135580"
-                app:profileItemTopText="@string/phone_param" />
+                app:profileItemTopText="@string/param_phone" />
 
             <com.thugrzz.mypetapp.view.ProfileItemView
                 android:id="@+id/addressView"
@@ -79,7 +79,7 @@
                 app:profileItemIcon="@drawable/ic_baseline_location_on_24"
                 app:profileItemIconBgColor="@color/blue_AFCBFF"
                 app:profileItemMiddleText="Ул. Ленина, 45, 23"
-                app:profileItemTopText="@string/address_param" />
+                app:profileItemTopText="@string/param_address" />
 
             <com.thugrzz.mypetapp.view.ProfileItemView
                 android:id="@+id/passwordView"
@@ -91,7 +91,7 @@
                 app:profileItemIcon="@drawable/ic_key"
                 app:profileItemIconBgColor="@color/orange_FE9900"
                 app:profileItemMiddleText="••••••••••••"
-                app:profileItemTopText="@string/password_param" />
+                app:profileItemTopText="@string/param_password" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"

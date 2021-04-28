@@ -67,13 +67,18 @@
         android:textColor="@color/orange_E77728"
         android:textSize="@dimen/text_16" />
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn"
+        android:id="@+id/authButton"
         style="@style/RoundedButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_50"

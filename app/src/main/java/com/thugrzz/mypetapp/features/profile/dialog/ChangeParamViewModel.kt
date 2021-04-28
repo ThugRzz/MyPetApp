@@ -11,17 +11,4 @@ class ChangeParamViewModel(
     private val repository: NetworkRepository
 ) : ViewModel() {
 
-    fun kek() {
-        repository.createUser().enqueue(object:Callback<Unit>{
-            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                Log.e("success", "success")
-            }
-
-            override fun onFailure(call: Call<Unit>, t: Throwable) {
-                Log.e("failed","fail")
-            }
-
-        })
-        Log.e("aw", "kek")
-    }
 }

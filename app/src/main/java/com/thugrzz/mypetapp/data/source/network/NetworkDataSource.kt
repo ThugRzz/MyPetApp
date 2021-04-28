@@ -1,12 +1,19 @@
 package com.thugrzz.mypetapp.data.source.network
 
-import com.thugrzz.mypetapp.data.model.remote.User
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.POST
+import com.thugrzz.mypetapp.data.request.AuthRequest
+import com.thugrzz.mypetapp.data.response.AuthResponse
+import com.thugrzz.mypetapp.data.response.BaseResponse
+import com.thugrzz.mypetapp.data.response.ImgResponse
+import retrofit2.http.*
 
 interface NetworkDataSource {
 
-    @POST("api/user/new")
-    fun login(@Body request: User): Call<Unit>
+    @POST("user/login")
+    suspend fun login(@Body request: AuthRequest): BaseResponse<AuthResponse>
+
+    @GET("load/{id}")
+    suspend fun img(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: String
+    ): ImgResponse
 }

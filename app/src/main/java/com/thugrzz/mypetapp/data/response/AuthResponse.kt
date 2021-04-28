@@ -1,8 +1,8 @@
-package com.thugrzz.mypetapp.data.model.remote
+package com.thugrzz.mypetapp.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class User(
+data class AuthResponse(
     @SerializedName("email") val email: String,
     @SerializedName("phone") val phone: String,
     @SerializedName("owner_name") val ownerName: String,
@@ -10,4 +10,5 @@ data class User(
     @SerializedName("pet_age") val petAge: String,
     @SerializedName("pet_type") val petType: String,
     @SerializedName("pet_breed") val breedType: String,
+    @SerializedName("token") val token: String,
 )

@@ -21,36 +21,36 @@ class ProfileSettingsFragment : Fragment(R.layout.fmt_profile_settings) {
 
         nameView.setActionIconClickListener {
             ChangeParamDialog.Builder(
-                title = getString(R.string.name_param),
-                description = getString(R.string.name_description),
+                title = getString(R.string.param_name),
+                description = getString(R.string.description_name),
                 target = this@ProfileSettingsFragment
             ).create().show(parentFragmentManager)
         }
         emailView.setActionIconClickListener {
             ChangeParamDialog.Builder(
-                title = getString(R.string.email_param),
-                description = getString(R.string.email_description, emailView.middleText),
+                title = getString(R.string.param_email),
+                description = getString(R.string.description_email, emailView.middleText),
                 target = this@ProfileSettingsFragment
             ).create().show(parentFragmentManager)
         }
         addressView.setActionIconClickListener {
             ChangeParamDialog.Builder(
-                title = getString(R.string.address_param),
-                description = getString(R.string.address_description),
+                title = getString(R.string.param_address),
+                description = getString(R.string.description_address),
                 target = this@ProfileSettingsFragment
             ).create().show(parentFragmentManager)
         }
         phoneView.setActionIconClickListener {
             ChangeParamDialog.Builder(
-                title = getString(R.string.phone_param),
-                description = getString(R.string.phone_description, phoneView.middleText),
+                title = getString(R.string.param_phone),
+                description = getString(R.string.description_phone, phoneView.middleText),
                 target = this@ProfileSettingsFragment
             ).create().show(parentFragmentManager)
         }
         passwordView.setActionIconClickListener {
             ChangeParamDialog.Builder(
-                title = getString(R.string.password_param),
-                description = getString(R.string.password_description),
+                title = getString(R.string.param_password),
+                description = getString(R.string.description_password),
                 target = this@ProfileSettingsFragment
             ).create().show(parentFragmentManager)
         }

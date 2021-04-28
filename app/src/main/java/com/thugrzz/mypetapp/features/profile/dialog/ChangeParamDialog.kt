@@ -13,7 +13,6 @@ import com.thugrzz.mypetapp.arch.BaseRoundedDialogFragment
 import com.thugrzz.mypetapp.databinding.DlgChangeParamBinding
 import com.thugrzz.mypetapp.ext.stringArgument
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.context.GlobalContext.get
 
 class ChangeParamDialog : BaseRoundedDialogFragment(R.layout.dlg_change_param) {
 
@@ -41,21 +40,21 @@ class ChangeParamDialog : BaseRoundedDialogFragment(R.layout.dlg_change_param) {
         inputLayout.hint = title
 
         dismissButton.setOnClickListener { dismiss() }
-        confirmButton.setOnClickListener { viewModel.kek() }
+        confirmButton.setOnClickListener { }
     }
 
     private fun setInputType(title: String) = with(binding) {
         inputEditText.inputType = when (title) {
-            getText(R.string.email_param) -> InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-            getText(R.string.phone_param) -> InputType.TYPE_CLASS_PHONE
-            getText(R.string.password_param) -> InputType.TYPE_TEXT_VARIATION_PASSWORD
+            getText(R.string.param_email) -> InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+            getText(R.string.param_phone) -> InputType.TYPE_CLASS_PHONE
+            getText(R.string.param_password) -> InputType.TYPE_TEXT_VARIATION_PASSWORD
             else -> InputType.TYPE_CLASS_TEXT
         }
     }
 
     private fun setInputMode(title: String) = with(binding) {
         inputLayout.endIconMode = when (title) {
-            getText(R.string.password_param) -> END_ICON_PASSWORD_TOGGLE
+            getText(R.string.param_password) -> END_ICON_PASSWORD_TOGGLE
             else -> END_ICON_CLEAR_TEXT
         }
     }

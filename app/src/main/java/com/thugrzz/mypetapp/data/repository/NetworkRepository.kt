@@ -1,8 +1,11 @@
 package com.thugrzz.mypetapp.data.repository
 
-import retrofit2.Call
+import com.thugrzz.mypetapp.data.response.AuthResponse
+import com.thugrzz.mypetapp.data.response.ImgResponse
 
 interface NetworkRepository {
 
-    fun createUser(): Call<Unit>
+    suspend fun login(email: String, password: String): AuthResponse
+
+    suspend fun img(): ImgResponse
 }

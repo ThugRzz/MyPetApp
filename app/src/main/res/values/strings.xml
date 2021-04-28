@@ -37,16 +37,21 @@
     <string name="settings">Настройки</string>
 
     <!-- personal info params -->
-    <string name="name_param">Имя</string>
-    <string name="email_param">Email</string>
-    <string name="phone_param">Номер телефона</string>
-    <string name="address_param">Адрес</string>
-    <string name="password_param">Пароль</string>
+    <string name="param_name">Имя</string>
+    <string name="param_email">Email</string>
+    <string name="param_phone">Номер телефона</string>
+    <string name="param_address">Адрес</string>
+    <string name="param_password">Пароль</string>
 
     <!-- personal info descriptions -->
-    <string name="name_description"><![CDATA[Имя должно состоять минимум  из 3 символов, не содержать в себе символы типа: №%,|$#^&*()]]></string>
-    <string name="email_description">Для смены email %1$s необходимо ввести новый в поле ввода</string>
-    <string name="phone_description">Для смены номера телефона %1$s необходимо ввести новый в поле ввода</string>
-    <string name="address_description">Для смены адреса необходимо ввести новый в поле ввода</string>
-    <string name="password_description">Пароль должен состоять минимум из 6 символов</string>
+    <string name="description_name">Имя должно состоять минимум  из 3 символов, не содержать в себе символы типа: №%,|$#^&amp;*()</string>
+    <string name="description_email">Для смены email %1$s необходимо ввести новый в поле ввода</string>
+    <string name="description_phone">Для смены номера телефона %1$s необходимо ввести новый в поле ввода</string>
+    <string name="description_address">Для смены адреса необходимо ввести новый в поле ввода</string>
+    <string name="description_password">Пароль должен состоять минимум из 6 символов</string>
+
+    <!-- validation -->
+    <string name="validation_empty">Поле не должно быть пустым!</string>
+    <string name="validation_email_incorrect">Вы ввели неверный email!</string>
+    <string name="validation_small_password">Пароль должен содержать минимум 6 символов!</string>
 </resources>

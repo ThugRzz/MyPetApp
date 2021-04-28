@@ -7,5 +7,8 @@ enum class Acceptance {
     LENGTH_SMALL,
     LENGTH_LARGE,
     EMPTY,
-    DUPLICATE
+    DUPLICATE;
+
+    val isAccepted: Boolean
+        get() = this == ACCEPTED
 }
