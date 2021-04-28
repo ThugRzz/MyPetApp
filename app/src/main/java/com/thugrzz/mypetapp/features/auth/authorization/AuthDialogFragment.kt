@@ -45,8 +45,6 @@ class AuthDialogFragment : DimensionalBottomSheetFragment(
             viewModel.login()
         }
 
-        viewModel.img()
-
         collect(viewModel.emailFlow, ::bindEmail)
         collect(viewModel.passwordFlow, ::bindPassword)
         collect(viewModel.isActionButtonEnabledFlow, authButton::setEnabled)
