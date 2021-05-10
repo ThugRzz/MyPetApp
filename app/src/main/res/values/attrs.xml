@@ -51,5 +51,7 @@
         <attr name="profileItemBottomText" format="string" />
     </declare-styleable>
 
-
+    <declare-styleable name="Loader">
+        <attr name="isDialog" format="boolean" />
+    </declare-styleable>
 </resources>

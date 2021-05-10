@@ -5,6 +5,8 @@
     <string name="action_registrate">Зарегистрироваться</string>
     <string name="action_enter">Вход</string>
     <string name="action_login">Войти</string>
+    <string name="action_exit">Выйти</string>
+    <string name="action_close">Закрыть</string>
     <string name="action_register_underline"><u>Зарегистрироваться</u></string>
 
     <!-- hints -->
@@ -27,6 +29,9 @@
     <string name="training">Рекомендации по дрессировке</string>
 
     <!-- other -->
+    <string name="profile_edit">Редактировать профиль</string>
+    <string name="menu">Меню</string>
+    <string name="sort">Сортировка</string>
     <string name="registration">Регистрация</string>
     <string name="forgot_password"><u>Забыли пароль?</u></string>
     <string name="have_account">Есть аккаунт?</string>
@@ -54,4 +59,61 @@
     <string name="validation_empty">Поле не должно быть пустым!</string>
     <string name="validation_email_incorrect">Вы ввели неверный email!</string>
     <string name="validation_small_password">Пароль должен содержать минимум 6 символов!</string>
+    <string name="button_cancel">Отменить</string>
+    <string name="button_ready">Готово</string>
+    <string name="date_title">Дата</string>
+    <string name="time_title">Время</string>
+    <string name="error_auth">Не удалось авторизоваться!</string>
+    <string name="schedule_notes_done">Выполнено</string>
+
+    <!-- Note periodicity -->
+    <string name="periodicity_once">Один раз</string>
+    <string name="periodicity_daily">Ежедневно</string>
+    <string name="periodicity_weekly">Еженедельно</string>
+    <string name="periodicity_monthly">Ежемесячно</string>
+
+    <!-- Add schedule -->
+    <string name="add_schedule_note_type">Тип заметки</string>
+    <string name="add_schedule_note_time_hint">Время</string>
+    <string name="add_schedule_note_time">Время заметки</string>
+    <string name="add_schedule_note_date_hint">Дата</string>
+    <string name="add_schedule_note_date">Дата заметки</string>
+    <string name="add_schedule_note_description_hint">Описание</string>
+    <string name="add_schedule_note_description">Краткое описание</string>
+    <string name="add_schedule_note_title_hint">Название</string>
+    <string name="add_schedule_note_title">Название заметки</string>
+    <string name="add_schedule_note_periodicity">Периодичность заметки</string>
+
+    <!-- Schedule sort -->
+    <string name="sort_once">Сегодня</string>
+    <string name="sort_daily">Ежедневные</string>
+    <string name="sort_weekly">Еженедельные</string>
+    <string name="sort_monthly">Ежемесячные</string>
+
+    <!-- Day of week -->
+    <string name="day_monday">Понедельник</string>
+    <string name="day_tuesday">Вторник</string>
+    <string name="day_wednesday">Среда</string>
+    <string name="day_thursday">Четверг</string>
+    <string name="day_friday">Пятница</string>
+    <string name="day_saturday">Суббота</string>
+    <string name="day_sunday">Воскресенье</string>
+
+    <!-- Schedule date -->
+    <string name="date_weekly">%s, %s</string>
+    <string name="date_monthly">День месяца: %1$d, %2$s</string>
+
+    <string-array name="schedule_types">
+        <item>Питание</item>
+        <item>Уход за животным</item>
+        <item>Развлечения</item>
+        <item>Прочее</item>
+    </string-array>
+
+    <string-array name="note_periodicity">
+        <item>Один раз</item>
+        <item>Ежедневно</item>
+        <item>Еженедельно</item>
+        <item>Ежемесячно</item>
+    </string-array>
 </resources>

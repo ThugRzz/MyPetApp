@@ -8,6 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.arch.BaseBottomTransparentDialogFragment
 import com.thugrzz.mypetapp.databinding.DlgProfileMenuBinding
+import com.thugrzz.mypetapp.features.main.MainFragment
 import com.thugrzz.mypetapp.features.profile.ProfileSettingsFragment
 
 class ProfileMenuDialog : BaseBottomTransparentDialogFragment(R.layout.dlg_profile_menu) {
@@ -18,14 +19,8 @@ class ProfileMenuDialog : BaseBottomTransparentDialogFragment(R.layout.dlg_profi
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             settingsCommentView.setOnClickListener {
-                parentFragmentManager.commit {
-                    replace(
-                        R.id.mainFragmentContainer,
-                        ProfileSettingsFragment.newInstance(),
-                        ProfileSettingsFragment.TAG
-                    )
-                    addToBackStack(null)
-                }
+                (requireParentFragment() as MainFragment)
+                    .pushFragment(ProfileSettingsFragment.newInstance())
                 dismiss()
             }
         }

@@ -26,6 +26,10 @@
         <item name="android:windowBackground">@drawable/bg_rounded_top_corners</item>
     </style>
 
+    <style name="AppTheme.NumberPicker" parent="AppTheme">
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
     <style name="EditInputField" parent="">
         <item name="colorControlNormal">@color/orange_FE9900</item>
         <item name="colorControlActivated">@color/colorAccent</item>
@@ -36,7 +40,11 @@
     </style>
 
     <style name="DefaultInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/input_layout_box_stroke_color</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="android:textColorHint">@color/gray_979BA8</item>
     </style>
 
@@ -87,6 +95,10 @@
 
     <style name="ShapeAppearanceOverlay.App.CornerSize30Percent" parent="">
         <item name="cornerSize">30%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize20Percent" parent="">
+        <item name="cornerSize">20%</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.CornerSize0Percent" parent="">

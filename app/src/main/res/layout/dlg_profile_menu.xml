@@ -23,7 +23,7 @@
             android:paddingBottom="@dimen/padding_8"
             android:textColor="@color/colorAccent"
             android:fontFamily="sans-serif-medium"
-            android:text="Меню"
+            android:text="@string/menu"
             android:textSize="@dimen/text_17" />
 
 
@@ -34,7 +34,7 @@
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingTop="10dp"
             android:paddingBottom="12dp"
-            android:text="Редактировать профиль"
+            android:text="@string/profile_edit"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_15"
             app:drawableEndCompat="@drawable/ic_baseline_edit_24"
@@ -47,7 +47,7 @@
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingTop="10dp"
             android:paddingBottom="12dp"
-            android:text="Настройки"
+            android:text="@string/settings"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_15"
             app:drawableEndCompat="@drawable/ic_baseline_settings_24"
@@ -60,7 +60,7 @@
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingTop="10dp"
             android:paddingBottom="12dp"
-            android:text="Выйти"
+            android:text="@string/action_exit"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_15"
             app:drawableEndCompat="@drawable/ic_baseline_exit_to_app_24"
@@ -75,6 +75,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="@dimen/padding_8"
         android:letterSpacing="0.01"
-        android:text="Закрыть" />
+        android:text="@string/action_close" />
 
 </LinearLayout>

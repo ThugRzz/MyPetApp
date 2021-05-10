@@ -1,6 +1,7 @@
 package com.thugrzz.mypetapp.ext
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.TypedValue
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -120,4 +121,30 @@ fun boolArgument() = object : ReadWriteProperty<Fragment, Boolean> {
 
     override fun setValue(thisRef: Fragment, property: KProperty<*>, value: Boolean) =
         thisRef.ensureArguments().putBoolean(property.name, value)
+}
+
+fun <T : Parcelable> parcelableArgument() = object : ReadWriteProperty<Fragment, T> {
+    override fun getValue(thisRef: Fragment, property: KProperty<*>): T =
+        thisRef.requireArguments().getParcelable(property.name)!!
+
+    override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T) =
+        thisRef.ensureArguments().putParcelable(property.name, value)
+}
+
+fun <T : Parcelable> nullableParcelableArgument() = object : ReadWriteProperty<Fragment, T?> {
+    override fun getValue(thisRef: Fragment, property: KProperty<*>): T? =
+        thisRef.arguments?.getParcelable(property.name) as T?
+
+    override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T?) =
+        thisRef.ensureArguments().putParcelable(property.name, value)
+}
+
+inline fun <reified T : Enum<*>> enumArgument() = object : ReadWriteProperty<Fragment, T> {
+    override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
+        val name = thisRef.requireArguments().getString(property.name)!!
+        return enumValueOf(name)
+    }
+
+    override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T) =
+        thisRef.ensureArguments().putString(property.name, value.name)
 }

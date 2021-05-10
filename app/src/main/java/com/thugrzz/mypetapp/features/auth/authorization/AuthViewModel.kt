@@ -1,17 +1,12 @@
 package com.thugrzz.mypetapp.features.auth.authorization
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.thugrzz.mypetapp.arch.BaseViewModel
 import com.thugrzz.mypetapp.data.repository.NetworkRepository
 import com.thugrzz.mypetapp.data.repository.PreferencesRepository
 import com.thugrzz.mypetapp.data.validation.AcceptableValue
 import com.thugrzz.mypetapp.data.validation.Validators
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class AuthViewModel(
@@ -33,7 +28,9 @@ class AuthViewModel(
     val errorActionFlow: Flow<Throwable>
         get() = innerErrorActionFlow
 
-    val imgFlow = MutableStateFlow("")
+    private val innerSuccessAuthActionFlow = MutableSharedFlow<Unit>()
+    val successAuthActionFlow: Flow<Unit>
+        get() = innerSuccessAuthActionFlow
 
     val isActionButtonEnabledFlow = combine(emailFlow, passwordFlow, ::getButtonEnabled)
 
@@ -44,6 +41,7 @@ class AuthViewModel(
         try {
             val authResponse = networkRepository.login(email, password)
             preferencesRepository.setToken(authResponse.token)
+            innerSuccessAuthActionFlow.emit(Unit)
         } catch (e: Throwable) {
             innerErrorActionFlow.emit(e)
         } finally {

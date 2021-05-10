@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <View
+        android:id="@+id/fontView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.6"

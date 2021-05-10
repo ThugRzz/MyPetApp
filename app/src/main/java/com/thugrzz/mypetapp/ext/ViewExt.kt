@@ -1,20 +1,17 @@
 package com.thugrzz.mypetapp.ext
 
 import android.content.Context
-import android.text.Editable
-import android.text.TextWatcher
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
+import android.widget.TimePicker
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.receiveAsFlow
 
 fun TextInputEditText.clearError() {
     error = null
@@ -63,33 +60,31 @@ fun View.getString(@StringRes stringResId: Int, vararg args: Any): String =
     resources.getString(stringResId, *args)
 
 fun MaterialTextView.setText(@StringRes resId: Int, vararg args: Any) {
-    this.setText(resId, *args)
+    text = context.getString(resId, *args)
 }
 
-fun TextInputEditText.asFlow(resetTarget: () -> Unit): Flow<EditText> {
-    return Channel<EditText>(capacity = Channel.UNLIMITED).also { channel ->
-        addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                s?.let {
-                    this@asFlow.clearError()
-                    resetTarget()
-                    channel.offer(this@asFlow)
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-        })
-    }.receiveAsFlow()
+fun FloatingActionButton.setBehavior(dy: Int) {
+    if (dy > 0 && isShown) hide() else if (dy < 0 && !isShown) show()
 }
 
-suspend fun EditText.isValidSize(): Boolean {
-    if (text.length < 5) {
-        error = "Invalid Size"
-        return false
+@Suppress("DEPRECATION")
+var TimePicker.timeHour
+    get() = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> hour
+        else -> currentHour
     }
-    return true
-}
+    set(value) = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> hour = value
+        else -> currentHour = value
+    }
+
+@Suppress("DEPRECATION")
+var TimePicker.timeMinute
+    get() = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> minute
+        else -> currentMinute
+    }
+    set(value) = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> minute = value
+        else -> currentMinute = value
+    }

@@ -81,6 +81,7 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.6"
     kapt "androidx.room:room-compiler:2.2.6"
     implementation "androidx.room:room-rxjava2:2.2.6"
+    implementation "androidx.room:room-ktx:2.2.6"
     implementation "android.arch.lifecycle:reactivestreams:1.1.1"
     kapt "android.arch.persistence.room:compiler:1.1.1"
 

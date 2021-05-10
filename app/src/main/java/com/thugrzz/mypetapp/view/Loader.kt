@@ -20,10 +20,21 @@ class Loader @JvmOverloads constructor(
 
     init {
         inflate(context, R.layout.view_loader, this)
+
+        val typedArray = context.obtainStyledAttributes(
+            attrs, R.styleable.Loader, defStyleAttr, 0
+        )
+
         val zoomAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom)
         binding.loaderIconView.imageTintList = ColorStateList.valueOf(
             ContextCompat.getColor(context, R.color.white)
         )
         binding.loaderIconView.startAnimation(zoomAnimation)
+
+        val isDialog = typedArray.getBoolean(R.styleable.Loader_isDialog, false)
+        if (isDialog) binding.fontView.background =
+            ContextCompat.getDrawable(context, R.drawable.bg_dialog_loader)
+
+        typedArray.recycle()
     }
 }

@@ -30,7 +30,6 @@ class ProfileFragment : Fragment(R.layout.fmt_profile) {
     }
 
     private fun setupAppBar() = with(binding) {
-
         appBarLayout.addOnOffsetChangedListener(OnOffsetChangedListener { appBarLayout, verticalOffset ->
             val totalScrollRange = appBarLayout.totalScrollRange
             val currentRatio = calculateOffsetRatio(verticalOffset, totalScrollRange)

@@ -33,7 +33,7 @@ val networkModule = module {
         val converterFactory = GsonConverterFactory.create(get<Gson>())
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .client(get<OkHttpClient>())
+            .client(get())
             .addCallAdapterFactory(callAdapterFactory)
             .addConverterFactory(converterFactory)
             .build()
