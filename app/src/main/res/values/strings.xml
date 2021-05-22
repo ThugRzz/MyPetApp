@@ -11,8 +11,13 @@
 
     <!-- hints -->
     <string name="edit_email_hint">E-mail</string>
+    <string name="edit_name_hint">Имя</string>
     <string name="edit_phone_hint">Номер телефона</string>
     <string name="edit_password_hint">Пароль</string>
+    <string name="edit_pet_name_hint">Кличка питомца</string>
+    <string name="edit_pet_age_hint">Возраст питомца</string>
+    <string name="edit_pet_type_hint">Тип питомца</string>
+    <string name="edit_pet_breed_hint">Порода</string>
 
     <!-- navigation titles -->
     <string name="profile">Профиль</string>
@@ -58,12 +63,17 @@
     <!-- validation -->
     <string name="validation_empty">Поле не должно быть пустым!</string>
     <string name="validation_email_incorrect">Вы ввели неверный email!</string>
+    <string name="validation_name_small">Имя должно содержать минимум 3 буквы</string>
+    <string name="validation_name_large">Имя должно содержать максимум 100 букв</string>
+    <string name="validation_declined">Вы ввели недопустимые символы</string>
+    <string name="validation_phone_small">Вы ввели слишком короткий номер</string>
     <string name="validation_small_password">Пароль должен содержать минимум 6 символов!</string>
     <string name="button_cancel">Отменить</string>
     <string name="button_ready">Готово</string>
     <string name="date_title">Дата</string>
     <string name="time_title">Время</string>
     <string name="error_auth">Не удалось авторизоваться!</string>
+    <string name="error_register">Не удалось зарегистрировать аккаунт!</string>
     <string name="schedule_notes_done">Выполнено</string>
 
     <!-- Note periodicity -->
@@ -102,6 +112,23 @@
     <!-- Schedule date -->
     <string name="date_weekly">%s, %s</string>
     <string name="date_monthly">День месяца: %1$d, %2$s</string>
+
+    <!-- Profile edit -->
+    <string name="profile_vaccinations">Прививки</string>
+    <string name="pet_name">Кличка питомца</string>
+    <string name="pet_type">Тип питомца</string>
+    <string name="pet_breed">Порода</string>
+    <string name="pet_breed_hint">Выберите породу</string>
+    <string name="pet_type_hint">Выберите тип</string>
+    <string name="pet_sex">Пол питомца</string>
+    <string name="pet_sex_hint">Выберите пол</string>
+    <string name="pet_status">Статус</string>
+    <string name="pet_status_hint">Выберите статус</string>
+    <string name="pet_height">Рост питомца</string>
+    <string name="pet_height_hint">Введите рост</string>
+    <string name="pet_weight">Вес питомца</string>
+    <string name="pet_weight_hint">Введите вес</string>
+    <string name="pet_name_hint">Введите имя</string>
 
     <string-array name="schedule_types">
         <item>Питание</item>

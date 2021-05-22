@@ -1,4 +1,4 @@
-package com.thugrzz.mypetapp.features.profile
+package com.thugrzz.mypetapp.features.profile.profile_settings
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.databinding.FmtProfileSettingsBinding
+import com.thugrzz.mypetapp.features.main.MainFragment
 import com.thugrzz.mypetapp.features.profile.dialog.ChangeParamDialog
 
 class ProfileSettingsFragment : Fragment(R.layout.fmt_profile_settings) {
@@ -16,7 +17,7 @@ class ProfileSettingsFragment : Fragment(R.layout.fmt_profile_settings) {
         super.onViewCreated(view, savedInstanceState)
 
         titleBarView.setStartIconClickListener {
-            parentFragmentManager.popBackStack()
+            (requireParentFragment() as MainFragment).onBackPressed()
         }
 
         nameView.setActionIconClickListener {

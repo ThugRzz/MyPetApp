@@ -37,13 +37,18 @@ abstract class DimensionalBottomSheetFragment(
         return dialog
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(layoutRes, container, false)
     }
 
-    private fun setupBottomSheetHeight(bottomSheetDialog: BottomSheetDialog) {
+    protected fun setupBottomSheetHeight(bottomSheetDialog: BottomSheetDialog) {
         val marginTopInPx = intPixelsOf(marginTop)
-        val bottomSheet = bottomSheetDialog.findViewById<FrameLayout>(R.id.design_bottom_sheet) as FrameLayout
+        val bottomSheet =
+            bottomSheetDialog.findViewById<FrameLayout>(R.id.design_bottom_sheet) as FrameLayout
         val behavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(bottomSheet)
         val layoutParams = bottomSheet.layoutParams
         val windowHeight = getWindowHeight() - getStatusBarHeight() - marginTopInPx

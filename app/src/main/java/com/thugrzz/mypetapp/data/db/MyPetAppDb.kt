@@ -6,10 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.thugrzz.mypetapp.data.db.dao.NotesDao
+import com.thugrzz.mypetapp.data.db.dao.PetDao
 import com.thugrzz.mypetapp.data.model.local.Note
+import com.thugrzz.mypetapp.data.model.remote.PetBreed
+import com.thugrzz.mypetapp.data.model.remote.PetType
 
 @Database(
-    entities = [Note::class],
+    entities = [Note::class, PetType::class, PetBreed::class],
     version = 1,
     exportSchema = false
 )
@@ -17,6 +20,7 @@ import com.thugrzz.mypetapp.data.model.local.Note
 abstract class MyPetAppDb : RoomDatabase() {
 
     abstract fun getNotesDao(): NotesDao
+    abstract fun getPetDao(): PetDao
 
     companion object {
 

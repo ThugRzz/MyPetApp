@@ -5,10 +5,12 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
+import com.google.android.material.appbar.AppBarLayout
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.databinding.FmtProfileBinding
+import com.thugrzz.mypetapp.features.main.MainFragment
 import com.thugrzz.mypetapp.features.profile.dialog.ProfileMenuDialog
+import com.thugrzz.mypetapp.features.profile.profile_edit.ProfileEditFragment
 import kotlin.math.roundToInt
 
 
@@ -16,21 +18,22 @@ class ProfileFragment : Fragment(R.layout.fmt_profile) {
 
     private val binding by viewBinding(FmtProfileBinding::bind)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
         setupAppBar()
-        with(binding) {
-            toolbarView.setNavigationOnClickListener {
-                parentFragmentManager.popBackStack()
-            }
-            menuIconView.setOnClickListener {
-                ProfileMenuDialog.show(parentFragmentManager)
-            }
+
+        menuIconView.setOnClickListener {
+            ProfileMenuDialog.show(parentFragmentManager)
         }
+        editFabView.setOnClickListener {
+            (requireParentFragment() as MainFragment)
+                .pushFragment(ProfileEditFragment.newInstance())
+        }
+
     }
 
     private fun setupAppBar() = with(binding) {
-        appBarLayout.addOnOffsetChangedListener(OnOffsetChangedListener { appBarLayout, verticalOffset ->
+        appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             val totalScrollRange = appBarLayout.totalScrollRange
             val currentRatio = calculateOffsetRatio(verticalOffset, totalScrollRange)
             profileIconView.alpha = currentRatio

@@ -28,7 +28,7 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/editCommentView"
+            android:id="@+id/editProfileView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_16"
@@ -41,7 +41,7 @@
             app:drawableTint="@color/colorAccent"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/settingsCommentView"
+            android:id="@+id/settingsView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_16"
@@ -54,7 +54,7 @@
             app:drawableTint="@color/colorAccent"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/deleteCommentView"
+            android:id="@+id/deleteView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_16"

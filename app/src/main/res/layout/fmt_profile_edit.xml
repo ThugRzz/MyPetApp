@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.thugrzz.mypetapp.view.TitleBarView
+        android:id="@+id/titleBarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleStartIcon="@drawable/ic_baseline_arrow_back_24"
+        app:titleText="@string/profile" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/pet_name"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titleInputLayout"
+                style="@style/DefaultInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                app:errorEnabled="false"
+                app:errorTextColor="@android:color/holo_red_dark"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/gray_979BA8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:hint="@string/pet_name_hint"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:theme="@style/EditInputField" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_type"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/petTypeView"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input_field_picker"
+                android:entries="@array/schedule_types"
+                android:gravity="center_vertical"
+                android:hint="@string/pet_type_hint"
+                android:paddingStart="18dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_breed"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/petBreedView"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input_field_picker"
+                android:entries="@array/schedule_types"
+                android:gravity="center_vertical"
+                android:hint="@string/pet_breed_hint"
+                android:paddingStart="18dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_sex"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/petSexView"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input_field_picker"
+                android:entries="@array/schedule_types"
+                android:gravity="center_vertical"
+                android:hint="@string/pet_sex_hint"
+                android:paddingStart="18dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_status"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/petStatusView"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input_field_picker"
+                android:entries="@array/schedule_types"
+                android:gravity="center_vertical"
+                android:hint="@string/pet_status_hint"
+                android:paddingStart="18dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_height"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/petHeightInputLayout"
+                style="@style/DefaultInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                app:errorEnabled="false"
+                app:errorTextColor="@android:color/holo_red_dark"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/gray_979BA8"
+                app:suffixText="см">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/petHeightInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:hint="@string/pet_height_hint"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:theme="@style/EditInputField" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/pet_weight"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/petWeightInputLayout"
+                style="@style/DefaultInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp"
+                app:errorEnabled="false"
+                app:errorTextColor="@android:color/holo_red_dark"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/gray_979BA8"
+                app:suffixText="кг">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/petWeightInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:hint="@string/pet_weight_hint"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:theme="@style/EditInputField" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

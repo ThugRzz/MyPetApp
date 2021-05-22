@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_32"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/registration"
+            android:textSize="@dimen/text_20" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/petNameInputLayout"
+            style="@style/DefaultInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:layout_marginTop="32dp"
+            android:hint="@string/edit_pet_name_hint"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/petNameInputView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:singleLine="true"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/petAgeInputLayout"
+            style="@style/DefaultInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:layout_marginTop="8dp"
+            android:hint="@string/edit_pet_age_hint"
+            app:endIconMode="clear_text"
+            app:errorEnabled="false"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/petAgeInputView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/petTypeInputLayout"
+            style="@style/DropDownInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:layout_marginTop="8dp"
+            android:hint="@string/edit_pet_type_hint"
+            app:endIconMode="dropdown_menu"
+            app:errorEnabled="false"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/petTypeInputView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/petBreedInputLayout"
+            style="@style/DropDownInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:layout_marginTop="8dp"
+            android:hint="@string/edit_pet_breed_hint"
+            app:endIconMode="dropdown_menu"
+            app:errorEnabled="true"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/petBreedInputView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerButton"
+            style="@style/RoundedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:layout_marginHorizontal="@dimen/padding_22"
+            android:text="@string/action_registrate" />
+
+        <com.thugrzz.mypetapp.view.IndicatorsView
+            style="@style/DefaultIndicators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_32"
+            android:layout_marginBottom="@dimen/padding_64"
+            app:indicatorsCurrentPosition="1"
+            app:indicatorsTotalCount="2" />
+    </LinearLayout>
+
+    <com.thugrzz.mypetapp.view.Loader
+        android:id="@+id/progressView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:isDialog="true" />
+
+</FrameLayout>

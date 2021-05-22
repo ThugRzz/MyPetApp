@@ -55,6 +55,7 @@ class AuthDialogFragment : DimensionalBottomSheetFragment(
         }
         collect(viewModel.successAuthActionFlow) {
             (activity as MainActivity).navigateToMainFragment()
+            dismiss()
         }
         collect(viewModel.isLoadingFlow, ::bindLoading)
     }

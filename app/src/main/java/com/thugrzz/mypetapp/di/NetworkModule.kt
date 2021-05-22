@@ -3,6 +3,8 @@ package com.thugrzz.mypetapp.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.bind.DateTypeAdapter
+import com.thugrzz.mypetapp.data.repository.PreferencesRepository
+import com.thugrzz.mypetapp.util.HeadersInterceptor
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,8 +26,10 @@ val networkModule = module {
     factory {
         val loggingInterceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
+        val headersInterceptor = HeadersInterceptor(get())
         OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(headersInterceptor)
             .build()
     }
     factory<Retrofit> {
