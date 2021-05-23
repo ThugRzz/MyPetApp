@@ -33,11 +33,11 @@ class RegisterPetInfoFragment : Fragment(R.layout.fmt_register_pet_info) {
         petNameInputView.doOnTextChanged { text, _, _, _ -> viewModel.onPetNameChange(text.toString()) }
         petAgeInputView.doOnTextChanged { text, _, _, _ -> viewModel.onPetAgeChange(text.toString()) }
         petTypeInputView.setOnItemClickListener { _, _, position, _ ->
-            viewModel.onPetTypeClick(position)
+            viewModel.onPetTypeClick(petTypeInputView.text.toString())
         }
 
         petBreedInputView.setOnItemClickListener { _, _, position, _ ->
-            viewModel.onPetBreedClick(position)
+            viewModel.onPetBreedClick(petBreedInputView.text.toString())
         }
 
         registerButton.setOnClickListener { viewModel.registration() }
@@ -51,7 +51,7 @@ class RegisterPetInfoFragment : Fragment(R.layout.fmt_register_pet_info) {
         collect(viewModel.errorActionFlow) {
             Toast.makeText(requireContext(), R.string.error_register, Toast.LENGTH_LONG).show()
         }
-        collect(viewModel.successRegisterActionFlow){
+        collect(viewModel.successRegisterActionFlow) {
             callback.navigateToAuth()
         }
     }

@@ -148,3 +148,11 @@ inline fun <reified T : Enum<*>> enumArgument() = object : ReadWriteProperty<Fra
     override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T) =
         thisRef.ensureArguments().putString(property.name, value.name)
 }
+
+fun <T : Parcelable> parcelableListArgument() = object : ReadWriteProperty<Fragment, List<T>> {
+    override fun getValue(thisRef: Fragment, property: KProperty<*>): List<T> =
+        thisRef.requireArguments().getParcelableArrayList(property.name)!!
+
+    override fun setValue(thisRef: Fragment, property: KProperty<*>, value: List<T>) =
+        thisRef.ensureArguments().putParcelableArrayList(property.name, ArrayList(value))
+}

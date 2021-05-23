@@ -4,10 +4,12 @@ import com.thugrzz.mypetapp.data.model.remote.FoodReference
 import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
 import com.thugrzz.mypetapp.data.request.AuthRequest
+import com.thugrzz.mypetapp.data.request.PetProfileRequest
 import com.thugrzz.mypetapp.data.request.RegisterRequest
 import com.thugrzz.mypetapp.data.response.AuthResponse
 import com.thugrzz.mypetapp.data.response.BaseResponse
 import com.thugrzz.mypetapp.data.response.ImgResponse
+import com.thugrzz.mypetapp.data.response.PetProfileResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -34,4 +36,12 @@ interface NetworkDataSource {
 
     @GET("pet/breeds")
     suspend fun getPetBreeds(): BaseResponse<List<PetBreed>>
+
+    @GET("user/pet")
+    suspend fun getPetProfile(): BaseResponse<PetProfileResponse>
+
+    @POST("user/pet/edit")
+    suspend fun savePetProfile(
+        @Body request: PetProfileRequest
+    ):BaseResponse<PetProfileResponse>
 }

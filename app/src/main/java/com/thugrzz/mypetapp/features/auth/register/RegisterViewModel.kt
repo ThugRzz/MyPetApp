@@ -63,14 +63,16 @@ class RegisterViewModel(
     private val innerPetAgeFlow = MutableStateFlow("")
     val petAgeFlow = innerPetAgeFlow
 
-    private val selectedTypePositionFlow = MutableStateFlow(-1)
+    private val selectedTypePositionFlow = MutableStateFlow<PetType?>(null)
 
-    private val selectedBreedPositionFlow = MutableStateFlow(-1)
+    private val selectedBreedPositionFlow = MutableStateFlow<PetBreed?>(null)
 
     private val innerPetTypesFlow = databaseRepository.getAllPetTypes()
+        .toStateFlow(emptyList())
     val petTypesFlow = innerPetTypesFlow.map { it.map(PetType::type) }
 
     private val innerPetBreedsFlow = databaseRepository.getAllPetBreeds()
+        .toStateFlow(emptyList())
     val petBreedsFlow = selectedTypePositionFlow.combine(innerPetBreedsFlow, ::getBreeds)
 
     private val innerIsLoadingFlow = MutableStateFlow(false)
@@ -106,8 +108,8 @@ class RegisterViewModel(
             val ownerName = innerOwnerNameFlow.value
             val petName = innerPetNameFlow.value
             val petAge = innerPetAgeFlow.value
-            val petType = selectedTypePositionFlow.value + 1
-            val breed = selectedBreedPositionFlow.value + 1
+            val petType = selectedTypePositionFlow.value?.id
+            val breed = selectedBreedPositionFlow.value?.id
             networkRepository.register(
                 email = email,
                 password = password,
@@ -115,8 +117,8 @@ class RegisterViewModel(
                 ownerName = ownerName,
                 petName = petName,
                 petAge = petAge,
-                petType = petType,
-                breed = breed
+                petType = petType?:0,
+                breed = breed?:0L
             )
             innerSuccessRegisterActionFlow.emit(Unit)
         } catch (e: Throwable) {
@@ -150,12 +152,16 @@ class RegisterViewModel(
         innerPetAgeFlow.emit(text)
     }
 
-    fun onPetTypeClick(position: Int) = viewModelScope.launch {
-        selectedTypePositionFlow.emit(position)
+    fun onPetTypeClick(type: String) = viewModelScope.launch {
+        val allTypes = innerPetTypesFlow.value
+        val selectedType = allTypes.firstOrNull { it.type == type }
+        selectedTypePositionFlow.emit(selectedType)
     }
 
-    fun onPetBreedClick(position: Int) = viewModelScope.launch {
-        selectedBreedPositionFlow.emit(position)
+    fun onPetBreedClick(breed: String) = viewModelScope.launch {
+        val allBreeds = innerPetBreedsFlow.value
+        val selectedBreed = allBreeds.firstOrNull { it.name == breed }
+        selectedBreedPositionFlow.emit(selectedBreed)
     }
 
     private fun loadPetTypesAndBreeds() = viewModelScope.launch(Dispatchers.IO) {
@@ -169,22 +175,21 @@ class RegisterViewModel(
         }
     }
 
-    private fun getBreeds(typePosition: Int, breeds: List<PetBreed>): List<String> =
-        when (typePosition) {
-            -1 -> emptyList()
+    private fun getBreeds(type: PetType?, breeds: List<PetBreed>): List<String> =
+        when (type) {
+            null -> emptyList()
             else -> {
-                val typeId: Long = typePosition.toLong() + 1
-                breeds.filter { it.petType == typeId }.map { it.name }
+                breeds.filter { it.petType == type.id }.map { it.name }
             }
         }
 
     private fun getRegisterButtonEnabled(
         petName: AcceptableValue<String>,
         age: String,
-        typePosition: Int,
-        breedPosition: Int
+        petType: PetType?,
+        breed: PetBreed?
     ): Boolean = petName.value.isNotEmpty() && petName.isAccepted && age.isNotEmpty()
-            && (typePosition != -1) && (breedPosition != -1)
+            && (petType != null) && (breed != null)
 
     private fun getButtonEnabled(
         email: AcceptableValue<String>,

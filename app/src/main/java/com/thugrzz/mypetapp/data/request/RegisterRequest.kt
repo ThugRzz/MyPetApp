@@ -9,6 +9,6 @@ data class RegisterRequest(
     @SerializedName("owner_name") val ownerName: String,
     @SerializedName("pet_name") val petName: String,
     @SerializedName("pet_age") val petAge: String,
-    @SerializedName("pet") val petType: Int,
-    @SerializedName("breed") val breed: Int
+    @SerializedName("pet") val petType: Long,
+    @SerializedName("breed") val breed: Long
 )
