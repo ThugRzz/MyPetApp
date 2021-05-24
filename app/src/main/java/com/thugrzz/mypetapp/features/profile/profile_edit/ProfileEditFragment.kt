@@ -1,7 +1,6 @@
 package com.thugrzz.mypetapp.features.profile.profile_edit
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -102,7 +101,6 @@ class ProfileEditFragment : Fragment(R.layout.fmt_profile_edit),
     }
 
     private fun bindPetType(type: PetType?) = with(binding.petTypeView) {
-        Log.e("awdwad","$type")
         val stringType = type?.type ?: ""
         if (stringType.isNotEmpty()) text = stringType
         setOnClickListener {
@@ -116,7 +114,6 @@ class ProfileEditFragment : Fragment(R.layout.fmt_profile_edit),
     }
 
     private fun bindBreed(breed: PetBreed?) = with(binding.petBreedView) {
-        Log.e("breed","$breed")
         val stringBreed = breed?.name ?: ""
         if (stringBreed.isNotEmpty()) text = stringBreed
         setOnClickListener {

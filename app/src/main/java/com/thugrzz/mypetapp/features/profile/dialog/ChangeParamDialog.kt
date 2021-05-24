@@ -10,22 +10,26 @@ import com.google.android.material.textfield.TextInputLayout.END_ICON_CLEAR_TEXT
 import com.google.android.material.textfield.TextInputLayout.END_ICON_PASSWORD_TOGGLE
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.arch.BaseRoundedDialogFragment
+import com.thugrzz.mypetapp.data.model.local.UserParam
 import com.thugrzz.mypetapp.databinding.DlgChangeParamBinding
+import com.thugrzz.mypetapp.ext.enumArgument
 import com.thugrzz.mypetapp.ext.stringArgument
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ChangeParamDialog : BaseRoundedDialogFragment(R.layout.dlg_change_param) {
 
     interface Callbacks {
-
+        fun onNameChanged(name: String)
+        fun onEmailChanged(email: String)
+        fun onPhoneChanged(phone: String)
+        fun onAddressChanged(address: String)
+        fun onPasswordChanged(password: String)
     }
 
     private val binding by viewBinding(DlgChangeParamBinding::bind)
 
-    private val viewModel: ChangeParamViewModel by viewModel()
-
     private var title by stringArgument()
     private var description by stringArgument()
+    private var userParam by enumArgument<UserParam>()
 
     private val callback
         get() = targetFragment as Callbacks
@@ -33,21 +37,31 @@ class ChangeParamDialog : BaseRoundedDialogFragment(R.layout.dlg_change_param) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
-        setInputType(title)
+        setInputType()
         setInputMode(title)
         titleView.text = title
         descriptionView.text = description
         inputLayout.hint = title
 
         dismissButton.setOnClickListener { dismiss() }
-        confirmButton.setOnClickListener { }
+        confirmButton.setOnClickListener {
+            val text = inputEditText.text.toString()
+            when (userParam) {
+                UserParam.NAME -> callback.onNameChanged(text)
+                UserParam.EMAIL -> callback.onEmailChanged(text)
+                UserParam.PHONE -> callback.onPhoneChanged(text)
+                UserParam.ADDRESS -> callback.onAddressChanged(text)
+                UserParam.PASSWORD -> callback.onPasswordChanged(text)
+            }
+            dismiss()
+        }
     }
 
-    private fun setInputType(title: String) = with(binding) {
-        inputEditText.inputType = when (title) {
-            getText(R.string.param_email) -> InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-            getText(R.string.param_phone) -> InputType.TYPE_CLASS_PHONE
-            getText(R.string.param_password) -> InputType.TYPE_TEXT_VARIATION_PASSWORD
+    private fun setInputType() = with(binding) {
+        inputEditText.inputType = when (userParam) {
+            UserParam.EMAIL -> InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+            UserParam.PHONE -> InputType.TYPE_CLASS_PHONE
+            UserParam.PASSWORD -> InputType.TYPE_TEXT_VARIATION_PASSWORD
             else -> InputType.TYPE_CLASS_TEXT
         }
     }
@@ -63,23 +77,18 @@ class ChangeParamDialog : BaseRoundedDialogFragment(R.layout.dlg_change_param) {
 
         val TAG = ChangeParamDialog::class.simpleName!!
 
-        private fun newInstance() = ChangeParamDialog()
-    }
-
-    fun show(fragmentManager: FragmentManager) = show(fragmentManager, TAG)
-
-    class Builder(
-        private var title: String,
-        private var description: String,
-        private var target: Fragment,
-    ) {
-
-        val dialog = newInstance()
-
-        fun create() = ChangeParamDialog().apply {
-            this.title = this@Builder.title
-            this.description = this@Builder.description
-            this@Builder.dialog.setTargetFragment(target, 0)
+        fun show(
+            fragmentManager: FragmentManager,
+            title: String,
+            description: String,
+            target: Fragment,
+            userParam: UserParam
+        ) = ChangeParamDialog().apply {
+            this.title = title
+            this.description = description
+            this.userParam = userParam
+            setTargetFragment(target, 0)
+            show(fragmentManager, TAG)
         }
     }
 }

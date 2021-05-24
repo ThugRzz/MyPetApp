@@ -9,7 +9,7 @@ val repositoryModule = module {
     single<DatabaseRepository> { DatabaseRepositoryImpl(androidContext()) }
 
     single<NetworkRepository> {
-        NetworkRepositoryImpl(get())
+        NetworkRepositoryImpl(get(), get())
     }
     single<PreferencesRepository> {
         PreferencesRepositoryImpl(get())

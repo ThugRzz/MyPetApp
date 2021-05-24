@@ -68,24 +68,40 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profileIconView"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="10dp"
-        android:padding="5dp"
-        android:scaleType="fitXY"
-        app:cornerSize="50%"
-        app:layout_anchor="@id/appBarLayout"
-        app:layout_anchorGravity="start|bottom"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-        app:srcCompat="@mipmap/puppy"
-        app:strokeColor="@color/white"
-        app:strokeWidth="2dp" />
-
     <include
         android:id="@+id/profileContentView"
         layout="@layout/content_profile" />
+
+    <FrameLayout
+        android:id="@+id/avatarContainer"
+        android:layout_width="110dp"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="start|bottom"
+        android:layout_marginStart="10dp"
+        android:layout_height="110dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIconView"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            app:cornerSize="50%"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:srcCompat="@mipmap/puppy"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp" />
+
+        <ImageView
+            android:id="@+id/editAvatarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_avatar_edit" />
+
+    </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/editFabView"

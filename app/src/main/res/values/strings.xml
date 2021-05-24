@@ -141,6 +141,11 @@
     <string name="error_data_failed">Не удалось загрузить данные</string>
     <string name="pet_height_param">%1$.1f см</string>
     <string name="pet_weight_param">%1$.1f кг</string>
+    <string name="fileprovider_authorities">com.thugrzz.mypetapp.fileprovider</string>
+    <string name="ok">Ок</string>
+    <string name="permission_rationale_camera">Тут должно быть пояснительное сообщение для чего нам нужно разрешение на камеру</string>
+    <string name="error_file_pick">На устройстве нет необходимого приложения</string>
+    <string name="error_file_camera">Ошибка открытия приложения камеры</string>
 
     <string-array name="schedule_types">
         <item>Питание</item>
@@ -154,5 +159,10 @@
         <item>Ежедневно</item>
         <item>Еженедельно</item>
         <item>Ежемесячно</item>
+    </string-array>
+
+    <string-array name="chat_file_sources">
+        <item>Файловое хранилище</item>
+        <item>Камера</item>
     </string-array>
 </resources>

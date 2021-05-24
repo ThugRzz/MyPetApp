@@ -1,13 +1,12 @@
 package com.thugrzz.mypetapp.data.repository
 
+import android.net.Uri
 import com.thugrzz.mypetapp.data.model.local.PetStatus
 import com.thugrzz.mypetapp.data.model.local.Sex
 import com.thugrzz.mypetapp.data.model.remote.FoodReference
 import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
-import com.thugrzz.mypetapp.data.response.AuthResponse
-import com.thugrzz.mypetapp.data.response.ImgResponse
-import com.thugrzz.mypetapp.data.response.PetProfileResponse
+import com.thugrzz.mypetapp.data.response.*
 
 interface NetworkRepository {
 
@@ -43,4 +42,21 @@ interface NetworkRepository {
         height: Double,
         weight: Double
     )
+
+    suspend fun getUserProfile(): UserProfileResponse
+
+    suspend fun saveUserProfile(
+        name: String,
+        email: String,
+        phone: String,
+        address: String
+    )
+
+    suspend fun savePassword(
+        password: String
+    )
+
+    suspend fun getAvatar(): AvatarResponse
+
+    suspend fun saveAvatar(uri: Uri): AvatarResponse
 }
