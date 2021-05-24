@@ -8,6 +8,7 @@ import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
 import com.thugrzz.mypetapp.data.repository.DatabaseRepository
 import com.thugrzz.mypetapp.data.repository.NetworkRepository
+import com.thugrzz.mypetapp.data.response.PetProfileResponse
 import com.thugrzz.mypetapp.data.validation.AcceptableValue
 import com.thugrzz.mypetapp.data.validation.Acceptance
 import com.thugrzz.mypetapp.data.validation.Validators
@@ -19,15 +20,15 @@ class ProfileEditViewModel(
     private val networkRepository: NetworkRepository
 ) : BaseViewModel() {
 
+    private val innerPetTypesFlow = databaseRepository.getAllPetTypes()
+        .toStateFlow(emptyList())
+    val petTypesFlow = innerPetTypesFlow
+
     private val innerSelectedTypeFlow = MutableStateFlow<PetType?>(null)
     val selectedTypeFlow = innerSelectedTypeFlow.map { it }
 
     private val innerSelectedBreedFlow = MutableStateFlow<PetBreed?>(null)
     val selectedBreedFlow = innerSelectedBreedFlow.map { it }
-
-    private val innerPetTypesFlow = databaseRepository.getAllPetTypes()
-        .toStateFlow(emptyList())
-    val petTypesFlow = innerPetTypesFlow
 
     private val innerPetBreedsFlow = databaseRepository.getAllPetBreeds()
         .toStateFlow(emptyList())

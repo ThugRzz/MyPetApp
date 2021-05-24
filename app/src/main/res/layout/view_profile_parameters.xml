@@ -29,9 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_8"
+            android:textAlignment="center"
             android:text="Тип"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_24" />
+            android:textSize="@dimen/text_18" />
 
     </LinearLayout>
 
@@ -56,8 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_8"
             android:text="Тип"
+            android:textAlignment="center"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_24" />
+            android:textSize="@dimen/text_18" />
 
     </LinearLayout>
 

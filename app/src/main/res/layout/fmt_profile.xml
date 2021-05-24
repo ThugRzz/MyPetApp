@@ -49,7 +49,7 @@
 
                 <View
                     android:layout_width="@dimen/height_40"
-                    android:layout_height="@dimen/height_40"/>
+                    android:layout_height="@dimen/height_40" />
 
                 <com.thugrzz.mypetapp.view.ShadowIconView
                     android:id="@+id/menuIconView"
@@ -92,8 +92,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/padding_24"
+        android:contentDescription="@null"
         android:src="@drawable/ic_baseline_edit_24"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="bottom|end" />
+
+    <com.thugrzz.mypetapp.view.Loader
+        android:id="@+id/progressView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:isDialog="false" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

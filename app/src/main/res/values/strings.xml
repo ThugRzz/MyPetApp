@@ -138,6 +138,9 @@
     <string name="error_something_went_wrong">Ой, что-то пошло не так</string>
     <string name="error_empty_data_pet">Заполните все данные!</string>
     <string name="success_data_saved">Данные успешно отправлены</string>
+    <string name="error_data_failed">Не удалось загрузить данные</string>
+    <string name="pet_height_param">%1$.1f см</string>
+    <string name="pet_weight_param">%1$.1f кг</string>
 
     <string-array name="schedule_types">
         <item>Питание</item>
