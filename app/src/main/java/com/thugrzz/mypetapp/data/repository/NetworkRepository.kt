@@ -3,9 +3,9 @@ package com.thugrzz.mypetapp.data.repository
 import android.net.Uri
 import com.thugrzz.mypetapp.data.model.local.PetStatus
 import com.thugrzz.mypetapp.data.model.local.Sex
-import com.thugrzz.mypetapp.data.model.remote.FoodReference
 import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
+import com.thugrzz.mypetapp.data.model.remote.Reference
 import com.thugrzz.mypetapp.data.response.*
 
 interface NetworkRepository {
@@ -25,7 +25,13 @@ interface NetworkRepository {
 
     suspend fun img(): ImgResponse
 
-    suspend fun getFoodReferences(): List<FoodReference>
+    suspend fun getFoodReferences(): List<Reference>
+
+    suspend fun getCareReferences(): List<Reference>
+
+    suspend fun getDiseaseReferences(): List<Reference>
+
+    suspend fun getTrainingReferences(): List<Reference>
 
     suspend fun getPetTypes(): List<PetType>
 

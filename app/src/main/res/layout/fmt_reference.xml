@@ -9,6 +9,7 @@
     <com.thugrzz.mypetapp.view.TitleBarView
         android:id="@+id/titleBarView"
         android:layout_width="match_parent"
+        app:titleText="@string/reference"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary" />
 

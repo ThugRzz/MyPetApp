@@ -146,6 +146,8 @@
     <string name="permission_rationale_camera">Тут должно быть пояснительное сообщение для чего нам нужно разрешение на камеру</string>
     <string name="error_file_pick">На устройстве нет необходимого приложения</string>
     <string name="error_file_camera">Ошибка открытия приложения камеры</string>
+    <string name="error_reference">Не удалось загрузить справочную информацию</string>
+    <string name="reference_step_title">%1$d. %2$s</string>
 
     <string-array name="schedule_types">
         <item>Питание</item>

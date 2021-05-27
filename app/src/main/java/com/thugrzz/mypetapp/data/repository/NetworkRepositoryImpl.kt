@@ -3,17 +3,15 @@ package com.thugrzz.mypetapp.data.repository
 import android.net.Uri
 import com.thugrzz.mypetapp.data.model.local.PetStatus
 import com.thugrzz.mypetapp.data.model.local.Sex
-import com.thugrzz.mypetapp.data.model.remote.FoodReference
 import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
+import com.thugrzz.mypetapp.data.model.remote.Reference
 import com.thugrzz.mypetapp.data.request.*
 import com.thugrzz.mypetapp.data.response.*
 import com.thugrzz.mypetapp.data.source.ContentHelper
 import com.thugrzz.mypetapp.data.source.network.NetworkDataSource
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.net.URLEncoder
 
@@ -54,8 +52,20 @@ class NetworkRepositoryImpl(
         return networkDataSource.img("care.png")
     }
 
-    override suspend fun getFoodReferences(): List<FoodReference> {
+    override suspend fun getFoodReferences(): List<Reference> {
         return networkDataSource.getFoods().data
+    }
+
+    override suspend fun getCareReferences(): List<Reference> {
+        return networkDataSource.getCares().data
+    }
+
+    override suspend fun getDiseaseReferences(): List<Reference> {
+        return networkDataSource.getDiseases().data
+    }
+
+    override suspend fun getTrainingReferences(): List<Reference> {
+        return networkDataSource.getTrainings().data
     }
 
     override suspend fun getPetBreeds(): List<PetBreed> {
@@ -122,7 +132,7 @@ class NetworkRepositoryImpl(
         contentHelper.openInputStream(uri).use { inputStream ->
             val fileType = mimeType.toMediaTypeOrNull()
             val bytes = inputStream.readBytes()
-            val fileBody =  bytes.toRequestBody(fileType, 0, bytes.size)
+            val fileBody = bytes.toRequestBody(fileType, 0, bytes.size)
             val encodedFileName = URLEncoder.encode(fileName, FILE_NAME_ENCODING)
             val filePart =
                 MultipartBody.Part.createFormData(FILE_PART_NAME, encodedFileName, fileBody)
