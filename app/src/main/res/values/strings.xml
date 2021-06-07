@@ -1,16 +1,23 @@
 <resources>
     <string name="app_name">MyPetApp</string>
+
+    <!-- actions -->
+    <string name="action_registrate">Зарегистрироваться</string>
+    <string name="action_enter">Вход</string>
+    <string name="action_login">Войти</string>
+    <string name="action_exit">Выйти</string>
+    <string name="action_close">Закрыть</string>
+    <string name="action_register_underline"><u>Зарегистрироваться</u></string>
+
+    <!-- hints -->
     <string name="edit_email_hint">E-mail</string>
-    <string name="enter">Вход</string>
+    <string name="edit_name_hint">Имя</string>
     <string name="edit_phone_hint">Номер телефона</string>
     <string name="edit_password_hint">Пароль</string>
-    <string name="register_underline"><u>Зарегистрироваться</u></string>
-    <string name="come_in">Войти</string>
-    <string name="registration">Регистрация</string>
-    <string name="forgot_password"><u>Забыли пароль?</u></string>
-    <string name="registrate">Зарегистрироваться</string>
-    <string name="have_account">Есть аккаунт?</string>
-    <string name="come_in_underline"><u>Войти</u></string>
+    <string name="edit_pet_name_hint">Кличка питомца</string>
+    <string name="edit_pet_age_hint">Возраст питомца</string>
+    <string name="edit_pet_type_hint">Тип питомца</string>
+    <string name="edit_pet_breed_hint">Порода</string>
 
     <!-- navigation titles -->
     <string name="profile">Профиль</string>
@@ -19,4 +26,147 @@
     <string name="qr_code">QR-код</string>
     <string name="skip">Пропустить</string>
     <string name="action_next">Далее</string>
+
+    <!-- reference -->
+    <string name="feed">Рацион питания</string>
+    <string name="pet_care">Уход за животным</string>
+    <string name="disease">Болезни и симптомы</string>
+    <string name="training">Рекомендации по дрессировке</string>
+
+    <!-- other -->
+    <string name="profile_edit">Редактировать профиль</string>
+    <string name="menu">Меню</string>
+    <string name="filter">Фильтрация</string>
+    <string name="registration">Регистрация</string>
+    <string name="forgot_password"><u>Забыли пароль?</u></string>
+    <string name="have_account">Есть аккаунт?</string>
+    <string name="come_in_underline"><u>Войти</u></string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_back">Вернуться</string>
+    <string name="personal_info">Личные данные</string>
+    <string name="settings">Настройки</string>
+
+    <!-- personal info params -->
+    <string name="param_name">Имя</string>
+    <string name="param_email">Email</string>
+    <string name="param_phone">Номер телефона</string>
+    <string name="param_address">Адрес</string>
+    <string name="param_password">Пароль</string>
+
+    <!-- personal info descriptions -->
+    <string name="description_name">Имя должно состоять минимум  из 3 символов, не содержать в себе символы типа: №%,|$#^&amp;*()</string>
+    <string name="description_email">Для смены email %1$s необходимо ввести новый в поле ввода</string>
+    <string name="description_phone">Для смены номера телефона %1$s необходимо ввести новый в поле ввода</string>
+    <string name="description_address">Для смены адреса необходимо ввести новый в поле ввода</string>
+    <string name="description_password">Пароль должен состоять минимум из 6 символов</string>
+
+    <!-- validation -->
+    <string name="validation_empty">Поле не должно быть пустым!</string>
+    <string name="validation_email_incorrect">Вы ввели неверный email!</string>
+    <string name="validation_name_small">Имя должно содержать минимум 3 буквы</string>
+    <string name="validation_name_large">Имя должно содержать максимум 100 букв</string>
+    <string name="validation_declined">Вы ввели недопустимые символы</string>
+    <string name="validation_phone_small">Вы ввели слишком короткий номер</string>
+    <string name="validation_small_password">Пароль должен содержать минимум 6 символов!</string>
+    <string name="button_cancel">Отменить</string>
+    <string name="button_ready">Готово</string>
+    <string name="date_title">Дата</string>
+    <string name="time_title">Время</string>
+    <string name="error_auth">Не удалось авторизоваться!</string>
+    <string name="error_register">Не удалось зарегистрировать аккаунт!</string>
+    <string name="schedule_notes_done">Выполнено</string>
+
+    <!-- Note periodicity -->
+    <string name="periodicity_once">Один раз</string>
+    <string name="periodicity_daily">Ежедневно</string>
+    <string name="periodicity_weekly">Еженедельно</string>
+    <string name="periodicity_monthly">Ежемесячно</string>
+
+    <!-- Add schedule -->
+    <string name="add_schedule_note_type">Тип заметки</string>
+    <string name="add_schedule_note_time_hint">Время</string>
+    <string name="add_schedule_note_time">Время заметки</string>
+    <string name="add_schedule_note_date_hint">Дата</string>
+    <string name="add_schedule_note_date">Дата заметки</string>
+    <string name="add_schedule_note_description_hint">Описание</string>
+    <string name="add_schedule_note_description">Краткое описание</string>
+    <string name="add_schedule_note_title_hint">Название</string>
+    <string name="add_schedule_note_title">Название заметки</string>
+    <string name="add_schedule_note_periodicity">Периодичность заметки</string>
+
+    <!-- Schedule sort -->
+    <string name="sort_once">Сегодня</string>
+    <string name="sort_daily">Ежедневные</string>
+    <string name="sort_weekly">Еженедельные</string>
+    <string name="sort_monthly">Ежемесячные</string>
+
+    <!-- Day of week -->
+    <string name="day_monday">Понедельник</string>
+    <string name="day_tuesday">Вторник</string>
+    <string name="day_wednesday">Среда</string>
+    <string name="day_thursday">Четверг</string>
+    <string name="day_friday">Пятница</string>
+    <string name="day_saturday">Суббота</string>
+    <string name="day_sunday">Воскресенье</string>
+
+    <!-- Schedule date -->
+    <string name="date_weekly">%s, %s</string>
+    <string name="date_monthly">День месяца: %1$d, %2$s</string>
+
+    <!-- Profile edit -->
+    <string name="profile_vaccinations">Прививки</string>
+    <string name="pet_name">Кличка питомца</string>
+    <string name="pet_type">Тип питомца</string>
+    <string name="pet_breed">Порода</string>
+    <string name="pet_breed_hint">Выберите породу</string>
+    <string name="pet_type_hint">Выберите тип</string>
+    <string name="pet_sex">Пол питомца</string>
+    <string name="pet_sex_hint">Выберите пол</string>
+    <string name="pet_status">Статус</string>
+    <string name="pet_status_hint">Выберите статус</string>
+    <string name="pet_height">Рост питомца</string>
+    <string name="pet_height_hint">Введите рост</string>
+    <string name="pet_weight">Вес питомца</string>
+    <string name="pet_weight_hint">Введите вес</string>
+    <string name="pet_name_hint">Введите имя</string>
+    <string name="sex_man">Мужской</string>
+    <string name="sex_woman">Женский</string>
+    <string name="status_castrated">Кастрирован</string>
+    <string name="status_uncastrated">Не кастрирован</string>
+    <string name="status_sterilized">Стерилизована</string>
+    <string name="status_unsterilized">Не стерилизована</string>
+    <string name="error_something_went_wrong">Ой, что-то пошло не так</string>
+    <string name="error_empty_data_pet">Заполните все данные!</string>
+    <string name="success_data_saved">Данные успешно отправлены</string>
+    <string name="error_data_failed">Не удалось загрузить данные</string>
+    <string name="pet_height_param">%1$.1f см</string>
+    <string name="pet_weight_param">%1$.1f кг</string>
+    <string name="fileprovider_authorities">com.thugrzz.mypetapp.fileprovider</string>
+    <string name="ok">Ок</string>
+    <string name="permission_rationale_camera">Тут должно быть пояснительное сообщение для чего нам нужно разрешение на камеру</string>
+    <string name="error_file_pick">На устройстве нет необходимого приложения</string>
+    <string name="error_file_camera">Ошибка открытия приложения камеры</string>
+    <string name="error_reference">Не удалось загрузить справочную информацию</string>
+    <string name="reference_step_title">%1$d. %2$s</string>
+    <string name="no_schedule_text">У вас пока нет заметок</string>
+    <string name="no_references">По заданному фильтру ничего не найдено</string>
+
+    <string-array name="schedule_types">
+        <item>Питание</item>
+        <item>Уход за животным</item>
+        <item>Развлечения</item>
+        <item>Прочее</item>
+    </string-array>
+
+    <string-array name="note_periodicity">
+        <item>Один раз</item>
+        <item>Ежедневно</item>
+        <item>Еженедельно</item>
+        <item>Ежемесячно</item>
+    </string-array>
+
+    <string-array name="chat_file_sources">
+        <item>Файловое хранилище</item>
+        <item>Камера</item>
+    </string-array>
 </resources>

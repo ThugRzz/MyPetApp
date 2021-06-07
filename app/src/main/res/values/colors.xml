@@ -5,17 +5,18 @@
     <color name="colorAccent">#0E1C36</color>
 
     <color name="black">#000000</color>
-    <color name="black_53">#87000000</color>
+    <color name="black_30">#4D000000</color>
 
     <color name="accent_50">#800E1C36</color>
 
     <color name="gray_BDBDBD">#BDBDBD</color>
 
+    <color name="blue_AFCBFF">#AFCBFF</color>
     <color name="orange_E77728">#E77728</color>
     <color name="orange_CD5334">#CD5334</color>
     <color name="gray_979BA8">#979BA8</color>
+    <color name="gray_393C41">#393C41</color>
 
-    <color name="blue_AFCBFF">#AFCBFF</color>
     <color name="blue_43C6D0">#43C6D0</color>
     <color name="orange_FE9900">#FE9900</color>
     <color name="green_ABCF15">#ABCF15</color>

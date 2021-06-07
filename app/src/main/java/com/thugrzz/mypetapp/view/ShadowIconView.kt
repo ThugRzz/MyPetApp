@@ -1,10 +1,12 @@
 package com.thugrzz.mypetapp.view
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.ext.resolveAttributeDrawable

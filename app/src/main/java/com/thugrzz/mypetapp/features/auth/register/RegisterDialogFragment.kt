@@ -11,7 +11,8 @@ import com.thugrzz.mypetapp.ext.showIfNotShowing
 
 class RegisterDialogFragment :
     BaseBackStackBottomSheet(R.layout.dlg_register, SCREEN_SIZE),
-    RegisterPersonalInfoFragment.Callbacks {
+    RegisterPersonalInfoFragment.Callbacks,
+    RegisterPetInfoFragment.Callback {
 
     interface Callbacks {
         fun navigateToAuthorization()
@@ -39,18 +40,21 @@ class RegisterDialogFragment :
         dismiss()
     }
 
-/*    override fun onRegisterCompleted() {
-
+    override fun navigateToPetInfoRegister() {
+        childFragmentManager.commit {
+            replace(
+                R.id.registerFragmentContainer,
+                RegisterPetInfoFragment.newInstance(),
+                RegisterPersonalInfoFragment.TAG
+            )
+            addToBackStack(RegisterPetInfoFragment.TAG)
+        }
     }
 
-    override fun navigateBack() {
-        dialog!!.onBackPressed()
-    }
-
-    override fun navigateToAuthorization() {
-        (targetFragment as Callbacks).navigateToAuthorization()
+    override fun navigateToAuth() {
+        callbacks.navigateToAuthorization()
         dismiss()
-    }*/
+    }
 
     companion object {
 

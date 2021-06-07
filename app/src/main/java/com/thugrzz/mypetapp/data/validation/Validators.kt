@@ -51,4 +51,13 @@ object Validators {
             else -> Acceptance.ACCEPTED
         }
     )
+
+    fun validatePassword(text: String) = AcceptableValue(
+        value = text,
+        status = when {
+            text.isEmpty() -> Acceptance.EMPTY
+            text.length < 6 -> Acceptance.LENGTH_SMALL
+            else -> Acceptance.ACCEPTED
+        }
+    )
 }

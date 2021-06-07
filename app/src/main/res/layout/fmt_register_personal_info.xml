@@ -37,11 +37,34 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        style="@style/DefaultInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_24"
+        android:layout_marginTop="8dp"
+        android:hint="@string/edit_name_hint"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:errorTextColor="@android:color/holo_red_dark"
+        app:hintTextColor="@color/gray_979BA8">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:theme="@style/EditInputField" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneInputLayout"
         style="@style/DefaultInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/padding_24"
+        android:layout_marginTop="8dp"
         android:hint="@string/edit_phone_hint"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
@@ -63,6 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/padding_24"
+        android:layout_marginTop="8dp"
         android:hint="@string/edit_password_hint"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
@@ -84,12 +108,12 @@
         android:layout_weight="1" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn"
+        android:id="@+id/nextRegisterButton"
         style="@style/RoundedButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_50"
         android:layout_marginHorizontal="@dimen/padding_22"
-        android:text="@string/registrate" />
+        android:text="@string/action_next" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -122,5 +146,5 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/padding_32"
         android:layout_marginBottom="@dimen/padding_64"
-        app:indicatorsTotalCount="3" />
+        app:indicatorsTotalCount="2" />
 </LinearLayout>

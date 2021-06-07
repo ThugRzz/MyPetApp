@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_dialog_inset"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_dialog"
+        android:divider="@drawable/divider_horizontal_gray"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pointTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="@dimen/padding_16"
+            android:paddingBottom="@dimen/padding_8"
+            android:text="@string/filter"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_17" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todaySortView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:text="@string/sort_once"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_15"
+            app:drawableEndCompat="@drawable/ic_sort_today"
+            app:drawableTint="@color/colorAccent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dailySortView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:text="@string/sort_daily"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_15"
+            app:drawableEndCompat="@drawable/ic_sort_daily"
+            app:drawableTint="@color/colorAccent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/weeklySortView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:text="@string/sort_weekly"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_15"
+            app:drawableEndCompat="@drawable/ic_sort_weekly"
+            app:drawableTint="@color/colorAccent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/monthlySortView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:text="@string/sort_monthly"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_15"
+            app:drawableEndCompat="@drawable/ic_sort_monthly"
+            app:drawableTint="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelButtonView"
+        style="@style/MenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/padding_8"
+        android:letterSpacing="0.01"
+        android:text="@string/action_close" />
+
+</LinearLayout>

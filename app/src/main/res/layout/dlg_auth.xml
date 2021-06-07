@@ -1,94 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/padding_32"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/enter"
-        android:textSize="@dimen/text_20" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailInputLayout"
-        style="@style/DefaultInputLayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/padding_24"
-        android:layout_marginTop="32dp"
-        android:hint="@string/edit_email_hint"
-        app:endIconMode="clear_text"
-        app:errorEnabled="true"
-        app:errorTextColor="@android:color/holo_red_dark"
-        app:hintTextColor="@color/gray_979BA8">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailInputText"
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_32"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/action_enter"
+            android:textSize="@dimen/text_20" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            style="@style/DefaultInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"
-            android:theme="@style/EditInputField" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:layout_marginTop="32dp"
+            android:hint="@string/edit_email_hint"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordInputLayout"
-        style="@style/DefaultInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/padding_24"
-        android:hint="@string/edit_password_hint"
-        app:endIconMode="password_toggle"
-        app:errorEnabled="true"
-        app:errorTextColor="@android:color/holo_red_dark"
-        app:hintTextColor="@color/gray_979BA8">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailInputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordInputText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInputLayout"
+            style="@style/DefaultInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:theme="@style/EditInputField" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:hint="@string/edit_password_hint"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:errorTextColor="@android:color/holo_red_dark"
+            app:hintTextColor="@color/gray_979BA8">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/padding_24"
-        android:layout_marginTop="@dimen/padding_18"
-        android:layout_marginBottom="@dimen/padding_64"
-        android:text="@string/forgot_password"
-        android:textColor="@color/orange_E77728"
-        android:textSize="@dimen/text_16" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:theme="@style/EditInputField" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_24"
+            android:layout_marginTop="@dimen/padding_18"
+            android:layout_marginBottom="@dimen/padding_64"
+            android:text="@string/forgot_password"
+            android:textColor="@color/orange_E77728"
+            android:textSize="@dimen/text_16" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn"
-        style="@style/RoundedButton"
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/authButton"
+            style="@style/RoundedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:layout_marginHorizontal="@dimen/padding_24"
+            android:text="@string/action_login" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/registerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_64"
+            android:text="@string/action_register_underline"
+            android:textColor="@color/orange_E77728"
+            android:textSize="@dimen/text_16" />
+
+    </LinearLayout>
+
+    <com.thugrzz.mypetapp.view.Loader
+        android:id="@+id/loaderView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_50"
-        android:layout_marginHorizontal="@dimen/padding_24"
-        android:text="@string/come_in" />
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:isDialog="true" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/padding_16"
-        android:layout_marginBottom="@dimen/padding_64"
-        android:text="@string/register_underline"
-        android:textColor="@color/orange_E77728"
-        android:textSize="@dimen/text_16" />
-
-</LinearLayout>
+</FrameLayout>

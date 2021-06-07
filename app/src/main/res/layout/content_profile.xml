@@ -9,36 +9,60 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_24"
+        android:layout_marginTop="36dp"
         android:orientation="vertical">
 
         <com.thugrzz.mypetapp.features.profile.ProfileParametersView
+            android:id="@+id/topParamsView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:icon="@drawable/ic_paw"
             app:leftTitle="Тип"
             app:rightTitle="Порода" />
 
-        <com.thugrzz.mypetapp.features.profile.ProfileParametersView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:icon="@drawable/ic_paw"
-            app:leftTitle="Тип"
-            app:rightTitle="Порода" />
+            android:layout_height="0.5dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/black_30" />
 
         <com.thugrzz.mypetapp.features.profile.ProfileParametersView
+            android:id="@+id/middleParamsView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:icon="@drawable/ic_paw"
-            app:leftTitle="Тип"
-            app:rightTitle="Порода" />
+            app:icon="@drawable/ic_profile_info"
+            app:leftTitle="Пол"
+            app:rightTitle="Статус" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/black_30" />
 
         <com.thugrzz.mypetapp.features.profile.ProfileParametersView
+            android:id="@+id/bottomParamsView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:icon="@drawable/ic_paw"
-            app:leftTitle="Тип"
-            app:rightTitle="Порода" />
+            app:icon="@drawable/ic_weight"
+            app:leftTitle="Рост"
+            app:rightTitle="Вес" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/black_30" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vaccinationsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:drawableEnd="@drawable/vaccinations_arrow_selector"
+            android:text="@string/profile_vaccinations"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

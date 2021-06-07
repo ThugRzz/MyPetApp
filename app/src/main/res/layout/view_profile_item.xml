@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/height_70">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iconView"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="@dimen/padding_12"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize30Percent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_12"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/topTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_2"
+                android:textColor="@color/gray_979BA8"
+                android:textSize="@dimen/text_14"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/middleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_18"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bottomTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_4"
+                android:textColor="@color/gray_979BA8"
+                android:textSize="@dimen/text_14"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/actionIconView"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/padding_12"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:foreground="?selectableItemBackground"
+            android:scaleType="centerInside" />
+
+    </LinearLayout>
+
+</merge>

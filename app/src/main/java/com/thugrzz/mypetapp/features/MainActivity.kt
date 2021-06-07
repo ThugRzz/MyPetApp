@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navigateToStartFragment()
+        navigateToOnboardingFragment()
     }
 
     private fun navigateToStartFragment() = supportFragmentManager.apply {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
     }
 
-    private fun navigateToMainFragment() = supportFragmentManager.apply {
+    fun navigateToMainFragment() = supportFragmentManager.apply {
         clearBackStack()
         commit {
             replace(R.id.mainActivityContainer, MainFragment.newInstance(), MainFragment.TAG)

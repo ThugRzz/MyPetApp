@@ -40,12 +40,6 @@ class TitleBarView @JvmOverloads constructor(
             }
         }
 
-    fun setStartIconClickListener(clickListener: () -> Unit) =
-        binding.titleStartIconView.setOnClickListener { clickListener() }
-
-    fun setEndIconClickListener(clickListener: () -> Unit) =
-        binding.titleEndIconView.setOnClickListener { clickListener() }
-
     init {
         orientation = HORIZONTAL
         inflate(context, R.layout.view_title_bar, this)
@@ -58,4 +52,10 @@ class TitleBarView @JvmOverloads constructor(
         endIconDrawable = typedArray.getDrawable(R.styleable.TitleBarView_titleEndIcon)
         typedArray.recycle()
     }
+
+    fun setStartIconClickListener(clickListener: () -> Unit) =
+        binding.titleStartIconView.setOnClickListener { clickListener() }
+
+    fun setEndIconClickListener(clickListener: () -> Unit) =
+        binding.titleEndIconView.setOnClickListener { clickListener() }
 }
