@@ -3,6 +3,7 @@ package com.thugrzz.mypetapp.data.response
 import com.google.gson.annotations.SerializedName
 
 data class AuthResponse(
+    @SerializedName("id") val userId: Long,
     @SerializedName("email") val email: String,
     @SerializedName("phone") val phone: String,
     @SerializedName("owner_name") val ownerName: String,

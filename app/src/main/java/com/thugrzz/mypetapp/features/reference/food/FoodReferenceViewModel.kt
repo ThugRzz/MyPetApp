@@ -4,15 +4,16 @@ import androidx.lifecycle.viewModelScope
 import com.thugrzz.mypetapp.arch.BaseViewModel
 import com.thugrzz.mypetapp.data.model.local.ReferenceDetails
 import com.thugrzz.mypetapp.data.model.local.ReferenceItem
-import com.thugrzz.mypetapp.data.model.remote.Reference
 import com.thugrzz.mypetapp.data.model.remote.PetBreed
 import com.thugrzz.mypetapp.data.model.remote.PetType
+import com.thugrzz.mypetapp.data.model.remote.Reference
 import com.thugrzz.mypetapp.data.repository.DatabaseRepository
 import com.thugrzz.mypetapp.data.repository.NetworkRepository
+import com.thugrzz.mypetapp.features.reference.dialog.ReferencesFilter
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 class FoodReferenceViewModel(
@@ -20,8 +21,14 @@ class FoodReferenceViewModel(
     private val databaseRepository: DatabaseRepository
 ) : BaseViewModel() {
 
+    private val myPetBreedFlow = MutableStateFlow<PetBreed?>(null)
+
+    private val innerFilterTypeFlow = MutableStateFlow(ReferencesFilter.ALL)
+    val filterTypeFlow: Flow<ReferencesFilter>
+        get() = innerFilterTypeFlow
+
     private val innerReferencesFlow = MutableStateFlow(emptyList<Reference>())
-    val referencesFlow = innerReferencesFlow.map(::getReferenceItems)
+    val referencesFlow = innerFilterTypeFlow.combine(innerReferencesFlow, ::getReferenceItems)
 
     private val innerIsLoadingFlow = MutableStateFlow(false)
     val isLoadingFlow: Flow<Boolean>
@@ -37,7 +44,22 @@ class FoodReferenceViewModel(
         .toStateFlow(emptyList())
 
     init {
+        loadMyPetInfo()
         loadFoodReferences()
+    }
+
+    fun onFilterSelected(filterType: ReferencesFilter) = viewModelScope.launch {
+        innerFilterTypeFlow.emit(filterType)
+    }
+
+    private fun loadMyPetInfo() = viewModelScope.launch {
+        try {
+            val petInfo = networkRepository.getPetProfile()
+            val myPetBreed = getPetBreed(petInfo.breedId)
+            myPetBreedFlow.emit(myPetBreed)
+        } catch (e: Throwable) {
+            e.printStackTrace()
+        }
     }
 
     private fun loadFoodReferences() = viewModelScope.launch {
@@ -52,7 +74,10 @@ class FoodReferenceViewModel(
         }
     }
 
-    private fun getReferenceItems(references: List<Reference>): List<ReferenceDetails> {
+    private fun getReferenceItems(
+        filterType: ReferencesFilter,
+        references: List<Reference>
+    ): List<ReferenceDetails> {
         val groupedReferences = references.groupBy { it.breedType }
         val referencesDetails = mutableListOf<ReferenceDetails>()
         for ((breedId, items) in groupedReferences) {
@@ -62,7 +87,11 @@ class FoodReferenceViewModel(
                 referencesDetails.add(referenceDetails)
             }
         }
-        return referencesDetails
+        val myPetBreed = myPetBreedFlow.value
+        return when (filterType) {
+            ReferencesFilter.ALL -> referencesDetails
+            ReferencesFilter.MY_PET -> referencesDetails.filter { it.breed == myPetBreed }
+        }
     }
 
     private fun createReferenceDetails(

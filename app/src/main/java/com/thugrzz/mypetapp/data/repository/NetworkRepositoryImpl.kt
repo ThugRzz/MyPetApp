@@ -53,23 +53,28 @@ class NetworkRepositoryImpl(
     }
 
     override suspend fun getFoodReferences(): List<Reference> {
-        return networkDataSource.getFoods().data
+        val response = networkDataSource.getFoods()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun getCareReferences(): List<Reference> {
-        return networkDataSource.getCares().data
+        val response =  networkDataSource.getCares()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun getDiseaseReferences(): List<Reference> {
-        return networkDataSource.getDiseases().data
+        val response =  networkDataSource.getDiseases()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun getTrainingReferences(): List<Reference> {
-        return networkDataSource.getTrainings().data
+        val response = networkDataSource.getTrainings()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun getPetBreeds(): List<PetBreed> {
-        return networkDataSource.getPetBreeds().data
+        val response = networkDataSource.getPetBreeds()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun getPetTypes(): List<PetType> {
@@ -77,7 +82,8 @@ class NetworkRepositoryImpl(
     }
 
     override suspend fun getPetProfile(): PetProfileResponse {
-        return networkDataSource.getPetProfile().data
+        val response = networkDataSource.getPetProfile()
+        return if(response.status) response.data else throw Throwable()
     }
 
     override suspend fun savePetProfile(

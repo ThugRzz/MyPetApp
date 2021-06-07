@@ -2,6 +2,7 @@ package com.thugrzz.mypetapp.features.schedule
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,7 +44,7 @@ class ScheduleFragment : Fragment(R.layout.fmt_schedule),
             )
         }
 
-        collect(viewModel.notesFlow, adapter::setItems)
+        collect(viewModel.notesFlow, ::bindSchedule)
         collect(viewModel.sortFlow, ::bindSelectedSort)
     }
 
@@ -53,6 +54,12 @@ class ScheduleFragment : Fragment(R.layout.fmt_schedule),
 
     override fun onItemCheckedClick(item: Item.NoteItem, isChecked: Boolean) {
         viewModel.onItemCheckedChange(item, isChecked)
+    }
+
+    private fun bindSchedule(items: List<Item>) = with(binding) {
+        listsEmptyLayout.isVisible = items.isEmpty()
+        scheduleView.isVisible = items.isNotEmpty()
+        adapter.setItems(items)
     }
 
     private fun bindSelectedSort(sort: ScheduleSort) {

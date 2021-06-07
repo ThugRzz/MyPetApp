@@ -26,58 +26,27 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_17" />
 
-
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/todaySortView"
+            android:id="@+id/myPetFilterView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingTop="10dp"
             android:paddingBottom="12dp"
-            android:text="@string/sort_once"
+            android:text="Для моего питомца"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_15"
-            app:drawableEndCompat="@drawable/ic_sort_today"
-            app:drawableTint="@color/colorAccent" />
+            android:textSize="@dimen/text_15" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/dailySortView"
+            android:id="@+id/allFilterView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_16"
             android:paddingTop="10dp"
             android:paddingBottom="12dp"
-            android:text="@string/sort_daily"
+            android:text="Все"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_15"
-            app:drawableEndCompat="@drawable/ic_sort_daily"
-            app:drawableTint="@color/colorAccent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/weeklySortView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/padding_16"
-            android:paddingTop="10dp"
-            android:paddingBottom="12dp"
-            android:text="@string/sort_weekly"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_15"
-            app:drawableEndCompat="@drawable/ic_sort_weekly"
-            app:drawableTint="@color/colorAccent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/monthlySortView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/padding_16"
-            android:paddingTop="10dp"
-            android:paddingBottom="12dp"
-            android:text="@string/sort_monthly"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_15"
-            app:drawableEndCompat="@drawable/ic_sort_monthly"
-            app:drawableTint="@color/colorAccent" />
+            android:textSize="@dimen/text_15" />
 
     </LinearLayout>
 

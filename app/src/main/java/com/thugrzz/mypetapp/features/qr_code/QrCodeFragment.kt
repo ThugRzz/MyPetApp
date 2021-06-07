@@ -10,10 +10,13 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import com.thugrzz.mypetapp.R
 import com.thugrzz.mypetapp.databinding.FmtQrCodeBinding
+import com.thugrzz.mypetapp.ext.collectNotNull
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class QrCodeFragment : Fragment(R.layout.fmt_qr_code) {
 
     private val binding by viewBinding(FmtQrCodeBinding::bind)
+    private val viewModel by viewModel<QrCodeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,8 +33,14 @@ class QrCodeFragment : Fragment(R.layout.fmt_qr_code) {
             }
         }
         generateButton.setOnClickListener {
-            qrCodeView.setImageBitmap(bmp)
+            viewModel.onGenerateClick()
         }
+
+        collectNotNull(viewModel.qrCodeFlow, ::bindQrCode)
+    }
+
+    private fun bindQrCode(bitmap: Bitmap) {
+        binding.qrCodeView.setImageBitmap(bitmap)
     }
 
     companion object {

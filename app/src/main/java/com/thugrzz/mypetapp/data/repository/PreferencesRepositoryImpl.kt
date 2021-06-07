@@ -11,4 +11,10 @@ class PreferencesRepositoryImpl(
     override fun setToken(token: String) {
         preferencesDataSource.setToken(token)
     }
+
+    override fun getUserId(): Long = preferencesDataSource.userId
+
+    override fun setUserId(id: Long) {
+        preferencesDataSource.setUserId(id)
+    }
 }

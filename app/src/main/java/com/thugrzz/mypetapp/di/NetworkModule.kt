@@ -14,7 +14,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
-private const val BASE_URL = "http://10.0.2.2:8000/api/"
+private const val BASE_URL = "https://mypetappdiploma.herokuapp.com/api/"
 
 val networkModule = module {
 

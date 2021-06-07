@@ -38,11 +38,17 @@ class CareReferenceFragment : Fragment(R.layout.fmt_reference_list) {
         )
         referencesView.adapter = adapter
 
-        collect(viewModel.referencesFlow, adapter::setItems)
+        collect(viewModel.referencesFlow, ::bindReferences)
         collect(viewModel.isLoadingFlow, progressView::isVisible::set)
         collect(viewModel.errorActionFlow) {
             Toast.makeText(requireContext(), R.string.error_reference, Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun bindReferences(references: List<ReferenceDetails>) = with(binding) {
+        referencesEmptyLayout.isVisible = references.isEmpty()
+        referencesView.isVisible = references.isNotEmpty()
+        adapter.setItems(references)
     }
 
     private fun navigateToReferenceDetails(item: ReferenceDetails) {

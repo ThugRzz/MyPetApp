@@ -5,6 +5,7 @@ import com.thugrzz.mypetapp.features.auth.register.RegisterViewModel
 import com.thugrzz.mypetapp.features.profile.ProfileViewModel
 import com.thugrzz.mypetapp.features.profile.profile_edit.ProfileEditViewModel
 import com.thugrzz.mypetapp.features.profile.profile_settings.ProfileSettingsViewModel
+import com.thugrzz.mypetapp.features.qr_code.QrCodeViewModel
 import com.thugrzz.mypetapp.features.reference.care.CareReferenceViewModel
 import com.thugrzz.mypetapp.features.reference.disease.DiseaseReferenceViewModel
 import com.thugrzz.mypetapp.features.reference.food.FoodReferenceViewModel
@@ -27,4 +28,5 @@ val viewModelModule = module {
     viewModel { CareReferenceViewModel(get(), get()) }
     viewModel { DiseaseReferenceViewModel(get(), get()) }
     viewModel { TrainingReferenceViewModel(get(), get()) }
+    viewModel { QrCodeViewModel(get()) }
 }

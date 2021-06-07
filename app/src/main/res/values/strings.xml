@@ -36,7 +36,7 @@
     <!-- other -->
     <string name="profile_edit">Редактировать профиль</string>
     <string name="menu">Меню</string>
-    <string name="sort">Сортировка</string>
+    <string name="filter">Фильтрация</string>
     <string name="registration">Регистрация</string>
     <string name="forgot_password"><u>Забыли пароль?</u></string>
     <string name="have_account">Есть аккаунт?</string>
@@ -148,6 +148,8 @@
     <string name="error_file_camera">Ошибка открытия приложения камеры</string>
     <string name="error_reference">Не удалось загрузить справочную информацию</string>
     <string name="reference_step_title">%1$d. %2$s</string>
+    <string name="no_schedule_text">У вас пока нет заметок</string>
+    <string name="no_references">По заданному фильтру ничего не найдено</string>
 
     <string-array name="schedule_types">
         <item>Питание</item>

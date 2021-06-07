@@ -41,6 +41,7 @@ class AuthViewModel(
         try {
             val authResponse = networkRepository.login(email, password)
             preferencesRepository.setToken(authResponse.token)
+            preferencesRepository.setUserId(authResponse.userId)
             innerSuccessAuthActionFlow.emit(Unit)
         } catch (e: Throwable) {
             innerErrorActionFlow.emit(e)

@@ -16,6 +16,7 @@
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="click me"
         android:textColor="@color/colorAccent" />
 
@@ -51,7 +52,7 @@
             style="@style/RoundedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_64"
+            android:layout_marginTop="90dp"
             android:text="@string/action_login" />
 
         <com.google.android.material.button.MaterialButton
@@ -62,41 +63,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/padding_18"
             android:text="@string/action_registrate" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/padding_24"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/padding_24"
-                app:elevation="0dp"
-                android:backgroundTint="@color/colorAccent"
-                app:fabSize="mini"
-                app:srcCompat="@drawable/ic_vk" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/padding_24"
-                android:backgroundTint="@color/colorAccent"
-                app:elevation="0dp"
-                app:fabSize="mini"
-                app:srcCompat="@drawable/ic_facebook" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                app:elevation="0dp"
-                app:fabSize="mini"
-                app:srcCompat="@drawable/ic_twitter" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
